@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { Truck, MessageSquare, CheckCircle, ArrowLeft, ShieldCheck, MapPin, AlertCircle } from 'lucide-react';
+import { Truck, MessageSquare, CheckCircle, ArrowLeft, ShieldCheck, MapPin, AlertCircle, User, Plus } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useCart } from '../context/CartContext';
-import { createOrderApi } from '../services/api';
+import { useCustomerAuth } from '../context/CustomerAuthContext';
+import { createOrderApi, fetchCustomerProfileApi } from '../services/api';
 
 const CheckoutPage = () => {
     const { cart, itemsSubtotal, deliveryCharge, grandTotal, clearCart } = useCart();
     const navigate = useNavigate();
+    const { isCustomerAuthenticated, customerUser, updateCustomerUser } = useCustomerAuth();
 
     const [customer, setCustomer] = useState({
         name: '',
@@ -17,6 +19,8 @@ const CheckoutPage = () => {
         notes: '',
     });
 
+    const [selectedAddressId, setSelectedAddressId] = useState('custom');
+    const [savedAddresses, setSavedAddresses] = useState([]);
     const [paymentMethod, setPaymentMethod] = useState('COD'); // 'COD' or 'WhatsApp'
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
@@ -24,13 +28,67 @@ const CheckoutPage = () => {
     const whatsappNumber = '+91 9138592984';
     const whatsappClean = whatsappNumber.replace(/[^0-9]/g, '');
 
+    // Redirect to login if customer is not authenticated
+    useEffect(() => {
+        if (!isCustomerAuthenticated) {
+            navigate('/login?redirect=checkout', { replace: true });
+        }
+    }, [isCustomerAuthenticated, navigate]);
+
+    // Load customer profile and addresses
+    useEffect(() => {
+        if (isCustomerAuthenticated) {
+            const loadProfile = async () => {
+                try {
+                    const res = await fetchCustomerProfileApi();
+                    if (res && res.success && res.customer) {
+                        const cust = res.customer;
+                        updateCustomerUser(cust);
+                        setSavedAddresses(cust.addresses || []);
+
+                        // Find default address or first address
+                        const defaultAddr = cust.addresses?.find((a) => a.isDefault) || cust.addresses?.[0];
+
+                        setCustomer((prev) => ({
+                            ...prev,
+                            name: cust.name || prev.name,
+                            phone: cust.phone || prev.phone,
+                            address: defaultAddr ? defaultAddr.fullAddress : (prev.address || 'Model Town Park, Rohtak'),
+                        }));
+
+                        if (defaultAddr) {
+                            setSelectedAddressId(defaultAddr._id);
+                        }
+                    }
+                } catch (err) {
+                    console.error('Failed to fetch profile during checkout', err);
+                }
+            };
+            loadProfile();
+        }
+    }, [isCustomerAuthenticated]);
+
+    const handleAddressSelect = (e) => {
+        const val = e.target.value;
+        setSelectedAddressId(val);
+
+        if (val === 'custom') {
+            setCustomer((prev) => ({ ...prev, address: '' }));
+        } else {
+            const found = savedAddresses.find((a) => a._id === val);
+            if (found) {
+                setCustomer((prev) => ({ ...prev, address: found.fullAddress }));
+            }
+        }
+    };
+
     if (cart.length === 0) {
         return (
-            <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+            <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: 'var(--bg-cream)' }}>
                 <Navbar />
-                <div className="container" style={{ padding: '4rem 1rem', textAlign: 'center' }}>
-                    <h3>No items in cart to checkout</h3>
-                    <Link to="/" className="btn-primary" style={{ marginTop: '1rem' }}>Return to Shop</Link>
+                <div className="container" style={{ padding: '4rem 1rem', textAlign: 'center', flexGrow: 1 }}>
+                    <h3 style={{ fontSize: '1.5rem', fontWeight: 800, marginBottom: '1rem' }}>No items in cart to checkout</h3>
+                    <Link to="/" className="btn-primary" style={{ textDecoration: 'none', padding: '0.75rem 1.5rem' }}>Return to Shop</Link>
                 </div>
                 <Footer />
             </div>
@@ -48,6 +106,7 @@ const CheckoutPage = () => {
         setError('');
 
         const orderPayload = {
+            customerId: customerUser?.id || customerUser?._id,
             items: cart.map((i) => ({
                 name: i.name,
                 price: i.price,
@@ -70,13 +129,14 @@ const CheckoutPage = () => {
                     createdOrder = res.order;
                 }
             } catch (err) {
-                console.warn('API call failed, fallback local order creation');
+                console.warn('API call failed, fallback local order creation', err);
             }
 
             if (!createdOrder) {
                 createdOrder = {
                     _id: `ord_${Date.now()}`,
                     orderNumber: `SN-${Date.now().toString().slice(-6)}`,
+                    customerId: customerUser?.id,
                     ...orderPayload,
                     status: 'Pending',
                     createdAt: new Date().toISOString(),
@@ -92,7 +152,7 @@ const CheckoutPage = () => {
                 window.open(waUrl, '_blank');
             }
 
-            // Save order to localStorage for tracking
+            // Save order to localStorage for recent track fallback
             try {
                 const savedOrders = JSON.parse(localStorage.getItem('sindhi_my_orders') || '[]');
                 if (!savedOrders.includes(createdOrder.orderNumber)) {
@@ -112,22 +172,34 @@ const CheckoutPage = () => {
     };
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', backgroundColor: 'var(--bg-cream)' }}>
             <Navbar />
 
-            <main className="container" style={{ paddingTop: '2.5rem', flexGrow: 1, paddingBottom: '3rem' }}>
+            <main className="container" style={{ paddingTop: '2.5rem', flexGrow: 1, paddingBottom: '4rem', maxWidth: '960px', margin: '0 auto' }}>
                 <div style={{ marginBottom: '1.5rem' }}>
-                    <Link to="/cart" style={{ color: 'var(--text-muted)', fontSize: '0.9rem', display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
+                    <Link to="/cart" style={{ color: 'var(--text-muted)', fontSize: '0.9rem', display: 'inline-flex', alignItems: 'center', gap: '0.3rem', textDecoration: 'none', fontWeight: 600 }}>
                         <ArrowLeft size={16} /> Return to Cart
                     </Link>
                 </div>
 
-                <h2 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '1.5rem' }}>
-                    Delivery & Checkout
-                </h2>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
+                    <div>
+                        <h2 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--text-main)' }}>
+                            Delivery & Checkout
+                        </h2>
+                        <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem' }}>
+                            Signed in as <strong>{customerUser?.name}</strong> ({customerUser?.email})
+                        </p>
+                    </div>
+
+                    <Link to="/my-addresses" style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--primary)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.35rem', backgroundColor: 'var(--primary-light)', padding: '0.4rem 0.85rem', borderRadius: 'var(--radius-full)' }}>
+                        <MapPin size={15} />
+                        <span>Manage Address Book</span>
+                    </Link>
+                </div>
 
                 {error && (
-                    <div style={{ backgroundColor: '#fef2f2', border: '1px solid #fecaca', color: '#dc2626', padding: '0.85rem', borderRadius: 'var(--radius-md)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <div style={{ backgroundColor: '#fef2f2', border: '1px solid #fecaca', color: '#dc2626', padding: '0.85rem 1rem', borderRadius: 'var(--radius-md)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
                         <AlertCircle size={18} />
                         <span>{error}</span>
                     </div>
@@ -142,6 +214,35 @@ const CheckoutPage = () => {
                         </h3>
 
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem' }}>
+                            {/* Address Selector Dropdown if user has saved addresses */}
+                            {savedAddresses.length > 0 && (
+                                <div style={{ backgroundColor: 'var(--bg-cream)', padding: '0.85rem 1rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-light)' }}>
+                                    <label style={{ fontSize: '0.82rem', fontWeight: 700, display: 'block', marginBottom: '0.4rem', color: 'var(--primary)' }}>
+                                        Select from Saved Addresses:
+                                    </label>
+                                    <select
+                                        value={selectedAddressId}
+                                        onChange={handleAddressSelect}
+                                        style={{
+                                            width: '100%',
+                                            padding: '0.65rem 0.85rem',
+                                            borderRadius: 'var(--radius-sm)',
+                                            border: '1px solid var(--border-light)',
+                                            fontSize: '0.9rem',
+                                            fontWeight: 600,
+                                            backgroundColor: '#ffffff',
+                                        }}
+                                    >
+                                        {savedAddresses.map((a) => (
+                                            <option key={a._id} value={a._id}>
+                                                {a.label || 'Saved Address'}: {a.fullAddress} {a.isDefault ? '(Default)' : ''}
+                                            </option>
+                                        ))}
+                                        <option value="custom">+ Enter a different delivery address...</option>
+                                    </select>
+                                </div>
+                            )}
+
                             <div>
                                 <label style={{ fontSize: '0.85rem', fontWeight: 700, display: 'block', marginBottom: '0.35rem' }}>Full Name *</label>
                                 <input
@@ -150,7 +251,7 @@ const CheckoutPage = () => {
                                     placeholder="e.g. Rajesh Kumar"
                                     value={customer.name}
                                     onChange={(e) => setCustomer({ ...customer, name: e.target.value })}
-                                    style={{ width: '100%', padding: '0.7rem 0.9rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-light)' }}
+                                    style={{ width: '100%', padding: '0.7rem 0.9rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-light)', fontSize: '0.95rem' }}
                                 />
                             </div>
 
@@ -162,7 +263,7 @@ const CheckoutPage = () => {
                                     placeholder="e.g. 98120 12345"
                                     value={customer.phone}
                                     onChange={(e) => setCustomer({ ...customer, phone: e.target.value })}
-                                    style={{ width: '100%', padding: '0.7rem 0.9rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-light)' }}
+                                    style={{ width: '100%', padding: '0.7rem 0.9rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-light)', fontSize: '0.95rem' }}
                                 />
                             </div>
 
@@ -174,7 +275,7 @@ const CheckoutPage = () => {
                                     placeholder="House/Shop No., Street, Landmark, Model Town Park, Rohtak"
                                     value={customer.address}
                                     onChange={(e) => setCustomer({ ...customer, address: e.target.value })}
-                                    style={{ width: '100%', padding: '0.7rem 0.9rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-light)' }}
+                                    style={{ width: '100%', padding: '0.7rem 0.9rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-light)', fontSize: '0.95rem' }}
                                 />
                             </div>
 
@@ -185,7 +286,7 @@ const CheckoutPage = () => {
                                     placeholder="e.g. Please send extra crisp mathri or call upon arrival"
                                     value={customer.notes}
                                     onChange={(e) => setCustomer({ ...customer, notes: e.target.value })}
-                                    style={{ width: '100%', padding: '0.7rem 0.9rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-light)' }}
+                                    style={{ width: '100%', padding: '0.7rem 0.9rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-light)', fontSize: '0.95rem' }}
                                 />
                             </div>
                         </div>

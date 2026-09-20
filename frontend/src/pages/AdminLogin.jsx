@@ -7,8 +7,8 @@ import { useAuth } from '../context/AuthContext';
 import { adminLoginApi } from '../services/api';
 
 const AdminLogin = () => {
-    const [username, setUsername] = useState('admin');
-    const [password, setPassword] = useState('admin123');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
 
@@ -21,21 +21,7 @@ const AdminLogin = () => {
         setError('');
 
         try {
-            let data;
-            try {
-                data = await adminLoginApi({ username, password });
-            } catch (err) {
-                // Fallback check if backend isn't reachable
-                if (username === 'admin' && password === 'admin123') {
-                    data = {
-                        success: true,
-                        token: 'mock_jwt_token_admin_2026',
-                        admin: { id: 'admin_1', username: 'admin' },
-                    };
-                } else {
-                    throw err;
-                }
-            }
+            const data = await adminLoginApi({ username, password });
 
             if (data && data.success) {
                 loginAdminContext(data.token, data.admin);
@@ -44,7 +30,12 @@ const AdminLogin = () => {
                 setError(data.message || 'Invalid credentials');
             }
         } catch (err) {
-            setError(err.message || 'Admin login failed');
+            // Handle rate limit (429) or generic failure
+            if (err.status === 429 || (err.message && err.message.toLowerCase().includes('too many'))) {
+                setError('Too many attempts, please try again in 15 minutes');
+            } else {
+                setError(err.message || 'Admin login failed');
+            }
         } finally {
             setLoading(false);
         }
@@ -88,20 +79,6 @@ const AdminLogin = () => {
                         </p>
                     </div>
 
-                    {/* Quick Credential Hint */}
-                    <div style={{
-                        backgroundColor: 'var(--secondary-light)',
-                        border: '1px solid #fde68a',
-                        borderRadius: 'var(--radius-md)',
-                        padding: '0.75rem',
-                        marginBottom: '1.25rem',
-                        fontSize: '0.8rem',
-                        color: '#92400e',
-                    }}>
-                        🔑 <strong>Default Admin Credentials:</strong><br />
-                        Username: <code style={{ fontWeight: 800 }}>admin</code> | Password: <code style={{ fontWeight: 800 }}>admin123</code>
-                    </div>
-
                     {error && (
                         <div style={{ backgroundColor: '#fef2f2', border: '1px solid #fecaca', color: '#dc2626', padding: '0.75rem', borderRadius: 'var(--radius-sm)', marginBottom: '1rem', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                             <AlertCircle size={16} />
@@ -117,6 +94,7 @@ const AdminLogin = () => {
                                 <input
                                     type="text"
                                     required
+                                    placeholder="Enter admin username"
                                     value={username}
                                     onChange={(e) => setUsername(e.target.value)}
                                     style={{ width: '100%', padding: '0.65rem 0.8rem 0.65rem 2.3rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-light)' }}
@@ -131,6 +109,7 @@ const AdminLogin = () => {
                                 <input
                                     type="password"
                                     required
+                                    placeholder="Enter admin password"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     style={{ width: '100%', padding: '0.65rem 0.8rem 0.65rem 2.3rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-light)' }}

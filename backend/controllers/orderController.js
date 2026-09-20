@@ -42,10 +42,13 @@ export const createOrder = async (req, res) => {
         const totalAmount = itemsPrice + deliveryCharge;
         const orderNumber = `SN-${Date.now().toString().slice(-6)}`;
 
+        const customerId = req.body.customerId || req.body.customer?.customerId || null;
+
         let newOrder;
         try {
             newOrder = await Order.create({
                 orderNumber,
+                customerId,
                 items,
                 customer,
                 itemsPrice,
@@ -58,6 +61,7 @@ export const createOrder = async (req, res) => {
             newOrder = {
                 _id: `ord_${Date.now()}`,
                 orderNumber,
+                customerId,
                 items,
                 customer,
                 itemsPrice,

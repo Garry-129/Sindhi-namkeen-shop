@@ -20,9 +20,15 @@ const orderSchema = new mongoose.Schema(
             required: true,
             unique: true,
         },
+        customerId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Customer',
+            required: false,
+        },
         items: [orderItemSchema],
         customer: {
             name: { type: String, required: true },
+            email: { type: String, default: '' },
             phone: { type: String, required: true },
             address: { type: String, required: true },
             notes: { type: String, default: '' },

@@ -14,6 +14,7 @@ import {
     Truck,
     AlertCircle,
     Search,
+    KeyRound,
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -27,6 +28,7 @@ import {
     fetchAdminOrders,
     updateOrderStatusApi,
     seedDatabaseApi,
+    changePasswordApi,
 } from '../services/api';
 import { initialProducts } from '../data/sampleProducts';
 
@@ -34,7 +36,7 @@ const AdminDashboard = () => {
     const { isAuthenticated, logoutAdminContext, adminUser } = useAuth();
     const navigate = useNavigate();
 
-    const [activeTab, setActiveTab] = useState('products'); // 'products' or 'orders'
+    const [activeTab, setActiveTab] = useState('products'); // 'products', 'orders', or 'security'
     const [products, setProducts] = useState([]);
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -42,6 +44,14 @@ const AdminDashboard = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [statusMsg, setStatusMsg] = useState('');
     const [searchFilter, setSearchFilter] = useState('');
+
+    // Change Password Form State
+    const [currentPassword, setCurrentPassword] = useState('');
+    const [newPassword, setNewPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [pwdLoading, setPwdLoading] = useState(false);
+    const [pwdError, setPwdError] = useState('');
+    const [pwdSuccess, setPwdSuccess] = useState('');
 
     useEffect(() => {
         if (!isAuthenticated) {
@@ -134,6 +144,39 @@ const AdminDashboard = () => {
         }
     };
 
+    const handleChangePassword = async (e) => {
+        e.preventDefault();
+        setPwdError('');
+        setPwdSuccess('');
+
+        if (newPassword.length < 6) {
+            setPwdError('New password must be at least 6 characters long.');
+            return;
+        }
+
+        if (newPassword !== confirmPassword) {
+            setPwdError('New password and confirm password do not match.');
+            return;
+        }
+
+        setPwdLoading(true);
+        try {
+            const res = await changePasswordApi({ currentPassword, newPassword });
+            if (res && res.success) {
+                setPwdSuccess('Password changed successfully!');
+                setCurrentPassword('');
+                setNewPassword('');
+                setConfirmPassword('');
+            } else {
+                setPwdError(res.message || 'Failed to change password');
+            }
+        } catch (err) {
+            setPwdError(err.message || 'Error changing password');
+        } finally {
+            setPwdLoading(false);
+        }
+    };
+
     const filteredProducts = products.filter((p) =>
         p.name.toLowerCase().includes(searchFilter.toLowerCase()) ||
         p.category.toLowerCase().includes(searchFilter.toLowerCase())
@@ -206,7 +249,7 @@ const AdminDashboard = () => {
                 </div>
 
                 {/* Tab Switcher */}
-                <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1.5rem', borderBottom: '1px solid var(--border-light)', paddingBottom: '0.5rem' }}>
+                <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1.5rem', borderBottom: '1px solid var(--border-light)', paddingBottom: '0.5rem', flexWrap: 'wrap' }}>
                     <button
                         onClick={() => setActiveTab('products')}
                         style={{
@@ -243,6 +286,25 @@ const AdminDashboard = () => {
                     >
                         <ShoppingBag size={18} />
                         <span>Customer Orders ({orders.length})</span>
+                    </button>
+
+                    <button
+                        onClick={() => setActiveTab('security')}
+                        style={{
+                            padding: '0.65rem 1.25rem',
+                            borderRadius: 'var(--radius-md)',
+                            fontWeight: 700,
+                            fontSize: '0.95rem',
+                            backgroundColor: activeTab === 'security' ? 'var(--primary)' : 'transparent',
+                            color: activeTab === 'security' ? '#ffffff' : 'var(--text-main)',
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.5rem',
+                        }}
+                    >
+                        <KeyRound size={18} />
+                        <span>Change Password</span>
                     </button>
                 </div>
 
@@ -384,6 +446,78 @@ const AdminDashboard = () => {
                                 </div>
                             ))
                         )}
+                    </div>
+                )}
+
+                {/* TAB 3: CHANGE PASSWORD / SECURITY */}
+                {activeTab === 'security' && (
+                    <div style={{ maxWidth: '500px', backgroundColor: '#ffffff', borderRadius: 'var(--radius-lg)', padding: '2rem', border: '1px solid var(--border-light)', boxShadow: 'var(--shadow-sm)' }}>
+                        <h3 style={{ fontSize: '1.25rem', fontWeight: 800, marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <KeyRound size={20} color="var(--primary)" /> Change Admin Password
+                        </h3>
+                        <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
+                            Update your admin portal password securely.
+                        </p>
+
+                        {pwdSuccess && (
+                            <div style={{ backgroundColor: '#dcfce7', border: '1px solid #86efac', color: '#166534', padding: '0.75rem', borderRadius: 'var(--radius-sm)', marginBottom: '1rem', fontSize: '0.85rem' }}>
+                                {pwdSuccess}
+                            </div>
+                        )}
+
+                        {pwdError && (
+                            <div style={{ backgroundColor: '#fef2f2', border: '1px solid #fecaca', color: '#dc2626', padding: '0.75rem', borderRadius: 'var(--radius-sm)', marginBottom: '1rem', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                <AlertCircle size={16} />
+                                <span>{pwdError}</span>
+                            </div>
+                        )}
+
+                        <form onSubmit={handleChangePassword} style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem' }}>
+                            <div>
+                                <label style={{ fontSize: '0.85rem', fontWeight: 700, display: 'block', marginBottom: '0.35rem' }}>Current Password</label>
+                                <input
+                                    type="password"
+                                    required
+                                    value={currentPassword}
+                                    onChange={(e) => setCurrentPassword(e.target.value)}
+                                    placeholder="Enter current password"
+                                    style={{ width: '100%', padding: '0.65rem 0.8rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-light)' }}
+                                />
+                            </div>
+
+                            <div>
+                                <label style={{ fontSize: '0.85rem', fontWeight: 700, display: 'block', marginBottom: '0.35rem' }}>New Password</label>
+                                <input
+                                    type="password"
+                                    required
+                                    value={newPassword}
+                                    onChange={(e) => setNewPassword(e.target.value)}
+                                    placeholder="At least 6 characters"
+                                    style={{ width: '100%', padding: '0.65rem 0.8rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-light)' }}
+                                />
+                            </div>
+
+                            <div>
+                                <label style={{ fontSize: '0.85rem', fontWeight: 700, display: 'block', marginBottom: '0.35rem' }}>Confirm New Password</label>
+                                <input
+                                    type="password"
+                                    required
+                                    value={confirmPassword}
+                                    onChange={(e) => setConfirmPassword(e.target.value)}
+                                    placeholder="Re-enter new password"
+                                    style={{ width: '100%', padding: '0.65rem 0.8rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-light)' }}
+                                />
+                            </div>
+
+                            <button
+                                type="submit"
+                                disabled={pwdLoading}
+                                className="btn-primary"
+                                style={{ padding: '0.75rem', marginTop: '0.5rem' }}
+                            >
+                                {pwdLoading ? 'Updating Password...' : 'Update Password'}
+                            </button>
+                        </form>
                     </div>
                 )}
             </main>

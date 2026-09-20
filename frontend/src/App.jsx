@@ -5,6 +5,10 @@ import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
 import OrderSuccessPage from './pages/OrderSuccessPage';
 import TrackOrderPage from './pages/TrackOrderPage';
+import CustomerLogin from './pages/CustomerLogin';
+import CustomerRegister from './pages/CustomerRegister';
+import MyOrdersPage from './pages/MyOrdersPage';
+import MyAddressesPage from './pages/MyAddressesPage';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 import { useCart } from './context/CartContext';
@@ -48,6 +52,10 @@ const App = () => {
                 <Route path="/checkout" element={<CheckoutPage />} />
                 <Route path="/order-success" element={<OrderSuccessPage />} />
                 <Route path="/track-order" element={<TrackOrderPage />} />
+                <Route path="/login" element={<CustomerLogin />} />
+                <Route path="/register" element={<CustomerRegister />} />
+                <Route path="/my-orders" element={<MyOrdersPage />} />
+                <Route path="/my-addresses" element={<MyAddressesPage />} />
                 <Route path="/admin/login" element={<AdminLogin />} />
                 <Route path="/admin/dashboard" element={<AdminDashboard />} />
             </Routes>
