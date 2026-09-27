@@ -6,6 +6,7 @@ import CategoryFilter from '../components/CategoryFilter';
 import ProductCard from '../components/ProductCard';
 import ProductDetailModal from '../components/ProductDetailModal';
 import Footer from '../components/Footer';
+import LocationMapModal from '../components/LocationMapModal';
 import { fetchProducts } from '../services/api';
 import { initialProducts } from '../data/sampleProducts';
 import { Sparkles, ShieldCheck, HeartHandshake, PackageCheck, AlertCircle } from 'lucide-react';
@@ -19,6 +20,7 @@ const HomePage = () => {
     const [selectedCategory, setSelectedCategory] = useState(categoryFromUrl);
     const [searchTerm, setSearchTerm] = useState('');
     const [activeModalProduct, setActiveModalProduct] = useState(null);
+    const [isMapModalOpen, setIsMapModalOpen] = useState(false);
 
     useEffect(() => {
         setSelectedCategory(categoryFromUrl);
@@ -65,7 +67,10 @@ const HomePage = () => {
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
             <Navbar />
 
-            <HeroBanner onShopNowClick={scrollToCatalog} />
+            <HeroBanner
+                onShopNowClick={scrollToCatalog}
+                onOpenMap={() => setIsMapModalOpen(true)}
+            />
 
             <main className="container" id="catalog" style={{ paddingTop: '2.5rem', flexGrow: 1 }}>
                 {/* Section Heading */}
@@ -172,6 +177,12 @@ const HomePage = () => {
                     onClose={() => setActiveModalProduct(null)}
                 />
             )}
+
+            {/* Location Map Popup Modal */}
+            <LocationMapModal
+                isOpen={isMapModalOpen}
+                onClose={() => setIsMapModalOpen(false)}
+            />
 
             <Footer />
 

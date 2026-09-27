@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, MessageSquare, Clock, Heart, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import LocationMap from './LocationMap';
 
 const Footer = () => {
     const shopPhone = '+91 9138592984';
@@ -64,7 +65,7 @@ const Footer = () => {
                         <h4 style={{ fontSize: '1.05rem', color: '#ffffff', fontWeight: 700, marginBottom: '1.25rem', position: 'relative' }}>
                             Store Location
                         </h4>
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', fontSize: '0.9rem', color: '#d4c6bc' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', fontSize: '0.9rem', color: '#d4c6bc', marginBottom: '1.25rem' }}>
                             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
                                 <MapPin size={18} color="var(--primary)" style={{ flexShrink: 0, marginTop: '3px' }} />
                                 <span>Model Town Park, Rohtak, Haryana 124001</span>
@@ -78,6 +79,9 @@ const Footer = () => {
                                 <span>Open Daily: 9:00 AM – 9:30 PM</span>
                             </div>
                         </div>
+
+                        {/* Location Preview Map Card */}
+                        <LocationMap variant="dark" />
                     </div>
 
                     {/* Column 3: Quick Links */}
