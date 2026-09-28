@@ -47,11 +47,11 @@ const ProductCard = ({ product, onViewDetails }) => {
             {/* Category Badge & Rating Header */}
             <div className="product-card-img-container" style={{ position: 'relative', height: '160px', overflow: 'hidden', backgroundColor: 'var(--bg-muted)' }}>
                 <img
-                    src={product.imageUrl}
+                    src={product.imageUrl || '/images/products/placeholder.svg'}
                     alt={product.name}
                     style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s ease' }}
                     onError={(e) => {
-                        e.target.src = 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=800&q=80';
+                        e.target.src = '/images/products/placeholder.svg';
                     }}
                 />
                 <div style={{ position: 'absolute', top: '8px', left: '8px', display: 'flex', gap: '0.3rem', flexWrap: 'wrap' }}>

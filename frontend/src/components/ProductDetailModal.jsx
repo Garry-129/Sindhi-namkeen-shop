@@ -82,9 +82,12 @@ const ProductDetailModal = ({ product, onClose }) => {
                 {/* Product Image */}
                 <div style={{ borderRadius: 'var(--radius-md)', overflow: 'hidden', height: '100%', minHeight: '260px', backgroundColor: 'var(--bg-muted)' }}>
                     <img
-                        src={product.imageUrl}
+                        src={product.imageUrl || '/images/products/placeholder.svg'}
                         alt={product.name}
                         style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        onError={(e) => {
+                            e.target.src = '/images/products/placeholder.svg';
+                        }}
                     />
                 </div>
 
