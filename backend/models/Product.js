@@ -10,7 +10,7 @@ const productSchema = new mongoose.Schema(
         category: {
             type: String,
             required: [true, 'Category is required'],
-            enum: ['Namkeen', 'Dry Fruits', 'Biscuits', 'Sweets & Snacks'],
+            enum: ['Namkeen', 'Dry Fruits', 'Biscuits', 'Mukhwas', 'Papad', 'Achar', 'Masala'],
             default: 'Namkeen',
         },
         price: {

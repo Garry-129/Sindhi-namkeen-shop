@@ -133,7 +133,10 @@ const AdminProductModal = ({ product, onClose, onSave }) => {
                                 <option value="Namkeen">Namkeen</option>
                                 <option value="Dry Fruits">Dry Fruits</option>
                                 <option value="Biscuits">Biscuits</option>
-                                <option value="Sweets & Snacks">Sweets & Snacks</option>
+                                <option value="Mukhwas">Mukhwas</option>
+                                <option value="Papad">Papad</option>
+                                <option value="Achar">Achar</option>
+                                <option value="Masala">Masala</option>
                             </select>
                         </div>
 

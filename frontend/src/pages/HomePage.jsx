@@ -59,12 +59,20 @@ const HomePage = () => {
     };
 
     const scrollToCatalog = () => {
-        const el = document.getElementById('catalog');
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        const el = document.getElementById('category-filter-section');
+        if (el) {
+            const navbarHeight = 80;
+            const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - navbarHeight;
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
     };
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', width: '100%', maxWidth: '100vw', overflowX: 'hidden' }}>
             <Navbar />
 
             <HeroBanner
@@ -72,21 +80,21 @@ const HomePage = () => {
                 onOpenMap={() => setIsMapModalOpen(true)}
             />
 
-            <main className="container" id="catalog" style={{ paddingTop: '2.5rem', flexGrow: 1 }}>
+            <main className="container main-catalog-container" id="catalog" style={{ paddingTop: '2rem', flexGrow: 1 }}>
                 {/* Section Heading */}
-                <div style={{ textAlign: 'center', marginBottom: '1.75rem' }}>
-                    <span className="badge badge-saffron" style={{ marginBottom: '0.4rem' }}>
+                <div style={{ textAlign: 'center', marginBottom: '1.5rem', padding: '0 0.5rem' }}>
+                    <span className="badge badge-saffron" style={{ marginBottom: '0.4rem', display: 'inline-block' }}>
                         Handcrafted in Model Town Park, Rohtak
                     </span>
-                    <h2 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.02em' }}>
+                    <h2 style={{ fontSize: 'clamp(1.4rem, 4.5vw, 2.1rem)', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
                         Explore Our {selectedCategory === 'All' ? 'Delicacies' : selectedCategory}
                     </h2>
-                    <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', maxWidth: '500px', margin: '0 auto' }}>
-                        Select your preferred pack weight (250g, 500g, 1kg) on any product card!
+                    <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', maxWidth: '500px', margin: '0.3rem auto 0 auto' }}>
+                        Select your preferred pack option on any product card!
                     </p>
                 </div>
 
-                {/* Filter & Search */}
+                {/* Filter & Search Section */}
                 <CategoryFilter
                     selectedCategory={selectedCategory}
                     onSelectCategory={handleCategorySelect}
@@ -109,21 +117,16 @@ const HomePage = () => {
                         <p style={{ color: 'var(--text-muted)', fontWeight: 600 }}>Loading fresh items...</p>
                     </div>
                 ) : products.length === 0 ? (
-                    <div style={{ textAlign: 'center', padding: '4rem 1rem', backgroundColor: '#ffffff', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-light)' }}>
-                        <AlertCircle size={40} color="var(--primary)" style={{ marginBottom: '0.5rem' }} />
-                        <h3 style={{ fontSize: '1.2rem', marginBottom: '0.3rem' }}>No products found</h3>
-                        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Try adjusting your search or category filter.</p>
+                    <div style={{ textAlign: 'center', padding: '3rem 1rem', backgroundColor: '#ffffff', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-light)' }}>
+                        <AlertCircle size={38} color="var(--primary)" style={{ marginBottom: '0.5rem' }} />
+                        <h3 style={{ fontSize: '1.15rem', marginBottom: '0.3rem' }}>No products found</h3>
+                        <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem' }}>Try adjusting your search or category filter.</p>
                     </div>
                 ) : (
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
-                        gap: '1.5rem',
-                        marginBottom: '3rem',
-                    }}>
+                    <div className="product-grid" style={{ marginBottom: '3rem' }}>
                         {products.map((prod) => (
                             <ProductCard
-                                key={prod._id}
+                                key={prod._id || prod.id}
                                 product={prod}
                                 onViewDetails={(item) => setActiveModalProduct(item)}
                             />
@@ -135,37 +138,37 @@ const HomePage = () => {
                 <section style={{
                     backgroundColor: '#ffffff',
                     borderRadius: 'var(--radius-lg)',
-                    padding: '2.5rem 1.5rem',
+                    padding: '2rem 1.25rem',
                     boxShadow: 'var(--shadow-sm)',
                     border: '1px solid var(--border-light)',
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-                    gap: '1.5rem',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                    gap: '1.25rem',
                     textAlign: 'center',
                     marginTop: '2rem',
                 }}>
                     <div>
-                        <div style={{ width: '48px', height: '48px', borderRadius: '50%', backgroundColor: 'var(--primary-light)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem auto' }}>
-                            <PackageCheck size={24} />
+                        <div style={{ width: '44px', height: '44px', borderRadius: '50%', backgroundColor: 'var(--primary-light)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 0.75rem auto' }}>
+                            <PackageCheck size={22} />
                         </div>
-                        <h4 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.3rem' }}>Fresh Daily Stock</h4>
-                        <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Prepared daily for crispiness & authentic flavor.</p>
+                        <h4 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '0.2rem' }}>Fresh Daily Stock</h4>
+                        <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>Prepared daily for crispiness & authentic flavor.</p>
                     </div>
 
                     <div>
-                        <div style={{ width: '48px', height: '48px', borderRadius: '50%', backgroundColor: 'var(--secondary-light)', color: 'var(--secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem auto' }}>
-                            <HeartHandshake size={24} />
+                        <div style={{ width: '44px', height: '44px', borderRadius: '50%', backgroundColor: 'var(--secondary-light)', color: 'var(--secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 0.75rem auto' }}>
+                            <HeartHandshake size={22} />
                         </div>
-                        <h4 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.3rem' }}>Rohtak Local Shop</h4>
-                        <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Located centrally in Model Town Park, Rohtak.</p>
+                        <h4 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '0.2rem' }}>Rohtak Local Shop</h4>
+                        <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>Located centrally in Model Town Park, Rohtak.</p>
                     </div>
 
                     <div>
-                        <div style={{ width: '48px', height: '48px', borderRadius: '50%', backgroundColor: '#e0f2fe', color: '#0284c7', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem auto' }}>
-                            <ShieldCheck size={24} />
+                        <div style={{ width: '44px', height: '44px', borderRadius: '50%', backgroundColor: '#e0f2fe', color: '#0284c7', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 0.75rem auto' }}>
+                            <ShieldCheck size={22} />
                         </div>
-                        <h4 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.3rem' }}>COD & WhatsApp</h4>
-                        <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Pay cash on delivery or order directly via WhatsApp.</p>
+                        <h4 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '0.2rem' }}>COD & WhatsApp</h4>
+                        <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>Pay cash on delivery or order directly via WhatsApp.</p>
                     </div>
                 </section>
             </main>
@@ -187,6 +190,21 @@ const HomePage = () => {
             <Footer />
 
             <style>{`
+        .product-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1.25rem;
+        }
+        @media (max-width: 1024px) {
+          .product-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 768px) {
+          .product-grid { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
+          .main-catalog-container { padding-left: 0.85rem !important; padding-right: 0.85rem !important; }
+        }
+        @media (max-width: 350px) {
+          .product-grid { grid-template-columns: 1fr; }
+        }
         @keyframes spin {
           to { transform: rotate(360deg); }
         }

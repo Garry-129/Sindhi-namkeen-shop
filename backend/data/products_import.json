@@ -1,0 +1,4340 @@
+[
+    {
+        "id": "prod_001",
+        "name": "Wheat Chidwa",
+        "category": "Namkeen",
+        "price": 230,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Wheat Chidwa - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_002",
+        "name": "Mix Berries",
+        "category": "Dry Fruits",
+        "price": 740,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Mix Berries - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_003",
+        "name": "Mix Fruit",
+        "category": "Dry Fruits",
+        "price": 600,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Mix Fruit - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_004",
+        "name": "Roasted Badam",
+        "category": "Dry Fruits",
+        "price": 1150,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Roasted Badam - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_005",
+        "name": "Roasted Beans",
+        "category": "Namkeen",
+        "price": 433,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Roasted Beans - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_006",
+        "name": "Dry Apricot",
+        "category": "Dry Fruits",
+        "price": 260,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Dry Apricot - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_007",
+        "name": "Protien Booster",
+        "category": "Namkeen",
+        "price": 600,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Protien Booster - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_008",
+        "name": "Quinoa Salad",
+        "category": "Namkeen",
+        "price": 450,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Quinoa Salad - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_009",
+        "name": "Pishori Pista",
+        "category": "Dry Fruits",
+        "price": 3100,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Pishori Pista - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_010",
+        "name": "Gola",
+        "category": "Namkeen",
+        "price": 420,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Gola - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_011",
+        "name": "Pista",
+        "category": "Dry Fruits",
+        "price": 1840,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Pista - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_012",
+        "name": "Moong Dal",
+        "category": "Namkeen",
+        "price": 220,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Moong Dal - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_013",
+        "name": "Plain Bhujiya",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Plain Bhujiya - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_014",
+        "name": "Bombay Chana",
+        "category": "Namkeen",
+        "price": 170,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Bombay Chana - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_015",
+        "name": "Plain Chana",
+        "category": "Namkeen",
+        "price": 140,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Plain Chana - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_016",
+        "name": "Chilka Chana",
+        "category": "Namkeen",
+        "price": 120,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Chilka Chana - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_017",
+        "name": "Salted Peanut",
+        "category": "Namkeen",
+        "price": 190,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Salted Peanut - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_018",
+        "name": "Lehsun Sev",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Lehsun Sev - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_019",
+        "name": "Rooasted Moong",
+        "category": "Namkeen",
+        "price": 240,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Rooasted Moong - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_020",
+        "name": "Hing Chana",
+        "category": "Namkeen",
+        "price": 175,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Hing Chana - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_021",
+        "name": "Lal Dana",
+        "category": "Namkeen",
+        "price": 175,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Lal Dana - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_022",
+        "name": "Aloo Lacha",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Aloo Lacha - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_023",
+        "name": "Kismis Mixture Falhari",
+        "category": "Dry Fruits",
+        "price": 240,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Kismis Mixture Falhari - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_024",
+        "name": "Sabudana Mixture Falhari",
+        "category": "Namkeen",
+        "price": 200,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Sabudana Mixture Falhari - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_025",
+        "name": "Chilli Chips",
+        "category": "Namkeen",
+        "price": 250,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Chilli Chips - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_026",
+        "name": "Peanut Chidwa",
+        "category": "Namkeen",
+        "price": 140,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Peanut Chidwa - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_027",
+        "name": "Chana Chidwa",
+        "category": "Namkeen",
+        "price": 140,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Chana Chidwa - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_028",
+        "name": "Salted Chips",
+        "category": "Namkeen",
+        "price": 250,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Salted Chips - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_029",
+        "name": "Long Sev",
+        "category": "Masala",
+        "price": 280,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Long Sev - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_030",
+        "name": "Bhakarvadi",
+        "category": "Namkeen",
+        "price": 250,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Bhakarvadi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_031",
+        "name": "Roasted Bajra",
+        "category": "Namkeen",
+        "price": 240,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Roasted Bajra - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_032",
+        "name": "Roasted Juwar",
+        "category": "Namkeen",
+        "price": 240,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Roasted Juwar - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_033",
+        "name": "Roasted Makka",
+        "category": "Namkeen",
+        "price": 240,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Roasted Makka - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_034",
+        "name": "Roasted Wheat",
+        "category": "Namkeen",
+        "price": 240,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Roasted Wheat - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_035",
+        "name": "Mix Bajra",
+        "category": "Namkeen",
+        "price": 240,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Mix Bajra - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_036",
+        "name": "Chana Jor",
+        "category": "Namkeen",
+        "price": 290,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Chana Jor - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_037",
+        "name": "Hara Jor",
+        "category": "Namkeen",
+        "price": 290,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Hara Jor - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_038",
+        "name": "Protien Mixture",
+        "category": "Namkeen",
+        "price": 280,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Protien Mixture - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_039",
+        "name": "Roasted Seamfali",
+        "category": "Namkeen",
+        "price": 280,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Roasted Seamfali - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_040",
+        "name": "Roasted Soyabean",
+        "category": "Namkeen",
+        "price": 280,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Roasted Soyabean - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_041",
+        "name": "3 In 1 Mixture",
+        "category": "Namkeen",
+        "price": 280,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "3 In 1 Mixture - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_042",
+        "name": "Masala Kabuli Chana",
+        "category": "Namkeen",
+        "price": 280,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Masala Kabuli Chana - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_043",
+        "name": "Moti Saunf",
+        "category": "Namkeen",
+        "price": 495,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Moti Saunf - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_044",
+        "name": "Muskmelon",
+        "category": "Namkeen",
+        "price": 500,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Muskmelon - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_045",
+        "name": "Aloo Bhujiya",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Aloo Bhujiya - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_046",
+        "name": "Garlic Kachri",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Garlic Kachri - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_047",
+        "name": "Masala Kachari",
+        "category": "Achar",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Masala Kachari - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_048",
+        "name": "Plain Chakli",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Plain Chakli - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_049",
+        "name": "Punjabi Tadka",
+        "category": "Namkeen",
+        "price": 185,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Punjabi Tadka - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_050",
+        "name": "Ribbon Chips",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Ribbon Chips - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_051",
+        "name": "Palak Ragi",
+        "category": "Namkeen",
+        "price": 280,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Palak Ragi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_052",
+        "name": "Makhana Ragi",
+        "category": "Namkeen",
+        "price": 380,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Makhana Ragi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_053",
+        "name": "Onion Peri Peri Ragi",
+        "category": "Namkeen",
+        "price": 290,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Onion Peri Peri Ragi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_054",
+        "name": "Cream And Onion Ragi Chips",
+        "category": "Namkeen",
+        "price": 290,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Cream And Onion Ragi Chips - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_055",
+        "name": "Makhana",
+        "category": "Namkeen",
+        "price": 10800,
+        "weightOptions": [
+            "1 Katta (Bulk)"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Makhana - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_056",
+        "name": "Murmura",
+        "category": "Namkeen",
+        "price": 700,
+        "weightOptions": [
+            "1 Katta (Bulk)"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Murmura - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_057",
+        "name": "Gajar Ragi",
+        "category": "Namkeen",
+        "price": 280,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Gajar Ragi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_058",
+        "name": "Khatta Meetha Corn Flacks",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Khatta Meetha Corn Flacks - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_059",
+        "name": "South Mixture",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "South Mixture - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_060",
+        "name": "Soya Stick",
+        "category": "Namkeen",
+        "price": 240,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Soya Stick - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_061",
+        "name": "Bikaneri Bhujiya",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Bikaneri Bhujiya - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_062",
+        "name": "Bhavnagri",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Bhavnagri - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_063",
+        "name": "Moong Mixture",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Moong Mixture - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_064",
+        "name": "Kadi Patta Bundi",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Kadi Patta Bundi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_065",
+        "name": "Masala Bundi",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Masala Bundi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_066",
+        "name": "Plain Bundi",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Plain Bundi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_067",
+        "name": "Masala Gathiya Mixture",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Masala Gathiya Mixture - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_068",
+        "name": "Plain Gathiya Mixture",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Plain Gathiya Mixture - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_069",
+        "name": "Matar Mixture",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Matar Mixture - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_070",
+        "name": "Chidwa Khatta Meetha (Indori)",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Chidwa Khatta Meetha (Indori) - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_071",
+        "name": "Cocktale Chana",
+        "category": "Namkeen",
+        "price": 195,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Cocktale Chana - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_072",
+        "name": "Testy",
+        "category": "Namkeen",
+        "price": 190,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Testy - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_073",
+        "name": "Navratan",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Navratan - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_074",
+        "name": "Masala Chana Dal",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Masala Chana Dal - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_075",
+        "name": "Kanpuri Mixture",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Kanpuri Mixture - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_076",
+        "name": "Pudina Chana Dal",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Pudina Chana Dal - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_077",
+        "name": "Cream And Onion Garlic Kachari",
+        "category": "Achar",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Cream And Onion Garlic Kachari - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_078",
+        "name": "Masala Aloo Lacha",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Masala Aloo Lacha - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_079",
+        "name": "Makka Sev",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Makka Sev - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_080",
+        "name": "Alsi Ragi Chips",
+        "category": "Namkeen",
+        "price": 330,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Alsi Ragi Chips - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_081",
+        "name": "Hing Kachodi",
+        "category": "Namkeen",
+        "price": 100,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Hing Kachodi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_082",
+        "name": "Tukda Kaju",
+        "category": "Dry Fruits",
+        "price": 840,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Tukda Kaju - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_083",
+        "name": "Banana Chips",
+        "category": "Namkeen",
+        "price": 280,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Banana Chips - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_084",
+        "name": "Roasted Alsi",
+        "category": "Namkeen",
+        "price": 260,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Roasted Alsi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_085",
+        "name": "Aloo Papad",
+        "category": "Papad",
+        "price": 280,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Aloo Papad - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_086",
+        "name": "Murku",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Murku - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_087",
+        "name": "Coconut Bhura",
+        "category": "Namkeen",
+        "price": 306,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Coconut Bhura - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_088",
+        "name": "Fryums Golgappe",
+        "category": "Namkeen",
+        "price": 120,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Fryums Golgappe - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_089",
+        "name": "Coconut Peda",
+        "category": "Namkeen",
+        "price": 300,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Coconut Peda - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_090",
+        "name": "Kaleva",
+        "category": "Namkeen",
+        "price": 70,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Kaleva - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_091",
+        "name": "Fryums",
+        "category": "Namkeen",
+        "price": 150,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Fryums - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_092",
+        "name": "Namak Para",
+        "category": "Namkeen",
+        "price": 160,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Namak Para - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_093",
+        "name": "Chat Papdi",
+        "category": "Namkeen",
+        "price": 160,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Chat Papdi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_094",
+        "name": "Methi Mathi",
+        "category": "Namkeen",
+        "price": 160,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Methi Mathi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_095",
+        "name": "Kalimirch Mathi",
+        "category": "Namkeen",
+        "price": 160,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Kalimirch Mathi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_096",
+        "name": "Gudpara",
+        "category": "Namkeen",
+        "price": 160,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Gudpara - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_097",
+        "name": "Masala Kaju",
+        "category": "Dry Fruits",
+        "price": 1250,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Masala Kaju - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_098",
+        "name": "Till Mathi",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Till Mathi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_099",
+        "name": "Chandani",
+        "category": "Namkeen",
+        "price": 160,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Chandani - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_100",
+        "name": "Kachodi",
+        "category": "Namkeen",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Kachodi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_101",
+        "name": "Disco Papad",
+        "category": "Papad",
+        "price": 270,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Disco Papad - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_102",
+        "name": "Cornflacks",
+        "category": "Namkeen",
+        "price": 160,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Cornflacks - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_103",
+        "name": "Gud Tangadi",
+        "category": "Namkeen",
+        "price": 170,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Gud Tangadi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_104",
+        "name": "Soya Katori Masala",
+        "category": "Namkeen",
+        "price": 140,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Soya Katori Masala - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_105",
+        "name": "Fikki Mathi",
+        "category": "Namkeen",
+        "price": 160,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Fikki Mathi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_106",
+        "name": "Plain Soya Katori",
+        "category": "Namkeen",
+        "price": 140,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Plain Soya Katori - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_107",
+        "name": "Chana Sattu Cookies",
+        "category": "Biscuits",
+        "price": 180,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Chana Sattu Cookies - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_108",
+        "name": "Ajwain Cookies",
+        "category": "Biscuits",
+        "price": 135,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Ajwain Cookies - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_109",
+        "name": "Macron",
+        "category": "Biscuits",
+        "price": 130,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Macron - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_110",
+        "name": "Badam Stick",
+        "category": "Dry Fruits",
+        "price": 180,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Badam Stick - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_111",
+        "name": "Fruit Kaju",
+        "category": "Dry Fruits",
+        "price": 160,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Fruit Kaju - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_112",
+        "name": "Coconut Cookies",
+        "category": "Biscuits",
+        "price": 165,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Coconut Cookies - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_113",
+        "name": "Badam Biscuiti",
+        "category": "Biscuits",
+        "price": 195,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Badam Biscuiti - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_114",
+        "name": "Marble",
+        "category": "Biscuits",
+        "price": 150,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Marble - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_115",
+        "name": "Butter Badam",
+        "category": "Dry Fruits",
+        "price": 180,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Butter Badam - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_116",
+        "name": "Kaju Pista",
+        "category": "Dry Fruits",
+        "price": 180,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Kaju Pista - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_117",
+        "name": "Multi Grain Cookies",
+        "category": "Biscuits",
+        "price": 195,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Multi Grain Cookies - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_118",
+        "name": "Dry Fruit Cookies",
+        "category": "Biscuits",
+        "price": 180,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Dry Fruit Cookies - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_119",
+        "name": "Cherry Cake Rusk",
+        "category": "Biscuits",
+        "price": 180,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Cherry Cake Rusk - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_120",
+        "name": "Plain Atta Biscuit",
+        "category": "Biscuits",
+        "price": 128,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Plain Atta Biscuit - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_121",
+        "name": "Desi Ghee Biscuit",
+        "category": "Biscuits",
+        "price": 135,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Desi Ghee Biscuit - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_122",
+        "name": "Butter Kaju",
+        "category": "Dry Fruits",
+        "price": 180,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Butter Kaju - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_123",
+        "name": "Plain Cake Rusk",
+        "category": "Biscuits",
+        "price": 180,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Plain Cake Rusk - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_124",
+        "name": "Besan Naan Khatai",
+        "category": "Biscuits",
+        "price": 165,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Besan Naan Khatai - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_125",
+        "name": "Gud Atta Biscuit",
+        "category": "Biscuits",
+        "price": 128,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Gud Atta Biscuit - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_126",
+        "name": "Plain Naan Khatai",
+        "category": "Biscuits",
+        "price": 150,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Plain Naan Khatai - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_127",
+        "name": "Sugarfree Cookies",
+        "category": "Biscuits",
+        "price": 135,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Sugarfree Cookies - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_128",
+        "name": "Jeera Cookie",
+        "category": "Masala",
+        "price": 135,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Jeera Cookie - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_129",
+        "name": "Honey Oats Cookies",
+        "category": "Biscuits",
+        "price": 180,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Honey Oats Cookies - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_130",
+        "name": "Truffle Chocolate Cookies",
+        "category": "Biscuits",
+        "price": 225,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Truffle Chocolate Cookies - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_131",
+        "name": "Chocolate Kaju Cookies",
+        "category": "Biscuits",
+        "price": 180,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Chocolate Kaju Cookies - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_132",
+        "name": "Samosa",
+        "category": "Namkeen",
+        "price": 95,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Samosa - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_133",
+        "name": "Achari Mathi",
+        "category": "Achar",
+        "price": 95,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Achari Mathi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_134",
+        "name": "Namak Para Mini",
+        "category": "Namkeen",
+        "price": 69,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Namak Para Mini - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_135",
+        "name": "Kachodi Mini",
+        "category": "Namkeen",
+        "price": 106,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Kachodi Mini - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_136",
+        "name": "Maida Kaju",
+        "category": "Dry Fruits",
+        "price": 84,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Maida Kaju - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_137",
+        "name": "Methi Mathi Mini",
+        "category": "Namkeen",
+        "price": 84,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Methi Mathi Mini - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_138",
+        "name": "Gudpara Mini",
+        "category": "Namkeen",
+        "price": 79,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Gudpara Mini - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_139",
+        "name": "Gud Tangdi Mini",
+        "category": "Namkeen",
+        "price": 84,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Gud Tangdi Mini - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_140",
+        "name": "Palak Mathi",
+        "category": "Namkeen",
+        "price": 84,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Palak Mathi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_141",
+        "name": "Chat Papadi Mini",
+        "category": "Papad",
+        "price": 69,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Chat Papadi Mini - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_142",
+        "name": "Kali Mirch Mathi Mini",
+        "category": "Masala",
+        "price": 84,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Kali Mirch Mathi Mini - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_143",
+        "name": "Moth Mathi",
+        "category": "Namkeen",
+        "price": 90,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Moth Mathi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_144",
+        "name": "Till Mathi Mini",
+        "category": "Namkeen",
+        "price": 95,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Till Mathi Mini - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_145",
+        "name": "Chandani Mini",
+        "category": "Namkeen",
+        "price": 160,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Chandani Mini - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_146",
+        "name": "Paan Goli",
+        "category": "Mukhwas",
+        "price": 220,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Paan Goli - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_147",
+        "name": "Milky Supari Gulab",
+        "category": "Mukhwas",
+        "price": 690,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Milky Supari Gulab - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_148",
+        "name": "Milky Supari Soft",
+        "category": "Mukhwas",
+        "price": 640,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Milky Supari Soft - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_149",
+        "name": "Moti Lacha Supari",
+        "category": "Mukhwas",
+        "price": 1100,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Moti Lacha Supari - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_150",
+        "name": "Chulbuli Imli",
+        "category": "Mukhwas",
+        "price": 40,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Chulbuli Imli - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_151",
+        "name": "Kala Jamun Goli",
+        "category": "Mukhwas",
+        "price": 170,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Kala Jamun Goli - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_152",
+        "name": "Nazrana Mixture",
+        "category": "Namkeen",
+        "price": 500,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Nazrana Mixture - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_153",
+        "name": "Calcutta Pan (Hara)",
+        "category": "Namkeen",
+        "price": 190,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Calcutta Pan (Hara) - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_154",
+        "name": "Chatkara Goli",
+        "category": "Mukhwas",
+        "price": 120,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Chatkara Goli - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_155",
+        "name": "Chatkara Goli Small",
+        "category": "Mukhwas",
+        "price": 95,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Chatkara Goli Small - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_156",
+        "name": "Paan Shorts",
+        "category": "Mukhwas",
+        "price": 250,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Paan Shorts - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_157",
+        "name": "Pudina Goli",
+        "category": "Mukhwas",
+        "price": 142,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Pudina Goli - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_158",
+        "name": "Falsa Goli",
+        "category": "Mukhwas",
+        "price": 190,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Falsa Goli - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_159",
+        "name": "Gulkand",
+        "category": "Mukhwas",
+        "price": 150,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Gulkand - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_160",
+        "name": "Masala Methi (South Metha)",
+        "category": "Namkeen",
+        "price": 162,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Masala Methi (South Metha) - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_161",
+        "name": "Roasted Saunf",
+        "category": "Mukhwas",
+        "price": 410,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Roasted Saunf - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_162",
+        "name": "Natkhat Imli",
+        "category": "Mukhwas",
+        "price": 179,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Natkhat Imli - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_163",
+        "name": "Honey Amla Candy",
+        "category": "Mukhwas",
+        "price": 398,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Honey Amla Candy - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_164",
+        "name": "Khatti Cutting",
+        "category": "Namkeen",
+        "price": 280,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Khatti Cutting - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_165",
+        "name": "Dhaniya Dal",
+        "category": "Namkeen",
+        "price": 280,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Dhaniya Dal - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_166",
+        "name": "Manchali Toffee",
+        "category": "Mukhwas",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Manchali Toffee - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_167",
+        "name": "Namkeen Amla",
+        "category": "Namkeen",
+        "price": 344,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Namkeen Amla - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_168",
+        "name": "Gulab Mixture",
+        "category": "Namkeen",
+        "price": 168,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Gulab Mixture - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_169",
+        "name": "Green Coconut Mixture",
+        "category": "Namkeen",
+        "price": 363,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Green Coconut Mixture - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_170",
+        "name": "Chocolate Mixture",
+        "category": "Namkeen",
+        "price": 168,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Chocolate Mixture - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_171",
+        "name": "Green Madrasi Souf",
+        "category": "Mukhwas",
+        "price": 220,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Green Madrasi Souf - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_172",
+        "name": "White Madrasi Souf",
+        "category": "Mukhwas",
+        "price": 220,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "White Madrasi Souf - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_173",
+        "name": "Export Mix",
+        "category": "Namkeen",
+        "price": 524,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Export Mix - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_174",
+        "name": "Sheka Thanda Supari",
+        "category": "Mukhwas",
+        "price": 1079,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Sheka Thanda Supari - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_175",
+        "name": "Buhni Supari",
+        "category": "Mukhwas",
+        "price": 1079,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Buhni Supari - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_176",
+        "name": "Mugale Azam Mixture",
+        "category": "Namkeen",
+        "price": 363,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Mugale Azam Mixture - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_177",
+        "name": "Kesar Mukhwas",
+        "category": "Mukhwas",
+        "price": 363,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Kesar Mukhwas - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_178",
+        "name": "Coconut Mixture",
+        "category": "Namkeen",
+        "price": 413,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Coconut Mixture - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_179",
+        "name": "Khaskhas Mixture",
+        "category": "Namkeen",
+        "price": 290,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Khaskhas Mixture - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_180",
+        "name": "Khatta Aam Papad",
+        "category": "Papad",
+        "price": 290,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Khatta Aam Papad - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_181",
+        "name": "Ram Ladoo",
+        "category": "Mukhwas",
+        "price": 210,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Ram Ladoo - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_182",
+        "name": "Anardana",
+        "category": "Mukhwas",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Anardana - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_183",
+        "name": "Imli Goli Natkhat",
+        "category": "Mukhwas",
+        "price": 232,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Imli Goli Natkhat - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_184",
+        "name": "Rasbhari Souf",
+        "category": "Mukhwas",
+        "price": 290,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Rasbhari Souf - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_185",
+        "name": "Masala Ajwain Pachak",
+        "category": "Mukhwas",
+        "price": 263,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Masala Ajwain Pachak - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_186",
+        "name": "Pillu Supari",
+        "category": "Mukhwas",
+        "price": 1080,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Pillu Supari - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_187",
+        "name": "Harad",
+        "category": "Mukhwas",
+        "price": 170,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Harad - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_188",
+        "name": "Hing Watti",
+        "category": "Mukhwas",
+        "price": 280,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Hing Watti - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_189",
+        "name": "Rasila Aam Papad Toffy",
+        "category": "Papad",
+        "price": 270,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Rasila Aam Papad Toffy - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_190",
+        "name": "Kala Aam Papapd Toffy",
+        "category": "Mukhwas",
+        "price": 275,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Kala Aam Papapd Toffy - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_191",
+        "name": "Mirchi Aam Papad",
+        "category": "Papad",
+        "price": 700,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Mirchi Aam Papad - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_192",
+        "name": "Khajur Supari",
+        "category": "Mukhwas",
+        "price": 332,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Khajur Supari - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_193",
+        "name": "Mix Toffy",
+        "category": "Mukhwas",
+        "price": 135,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Mix Toffy - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_194",
+        "name": "Kesar Lacha Supari",
+        "category": "Mukhwas",
+        "price": 1260,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Kesar Lacha Supari - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_195",
+        "name": "Orange Candy",
+        "category": "Mukhwas",
+        "price": 135,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Orange Candy - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_196",
+        "name": "Imli Ladoo",
+        "category": "Mukhwas",
+        "price": 180,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Imli Ladoo - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_197",
+        "name": "Ghata Gat Imli",
+        "category": "Mukhwas",
+        "price": 200,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Ghata Gat Imli - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_198",
+        "name": "Jeera Goli",
+        "category": "Masala",
+        "price": 147,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Jeera Goli - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_199",
+        "name": "Ram Pan",
+        "category": "Namkeen",
+        "price": 70,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Ram Pan - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_200",
+        "name": "Rasila Aam Papad",
+        "category": "Papad",
+        "price": 85,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Rasila Aam Papad - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_201",
+        "name": "Hara Aam Papad",
+        "category": "Papad",
+        "price": 85,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Hara Aam Papad - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_202",
+        "name": "Pumkin Seed",
+        "category": "Dry Fruits",
+        "price": 410,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Pumkin Seed - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_203",
+        "name": "Sunflower Seed",
+        "category": "Dry Fruits",
+        "price": 170,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Sunflower Seed - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_204",
+        "name": "Water Melon Seed",
+        "category": "Dry Fruits",
+        "price": 450,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Water Melon Seed - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_205",
+        "name": "Shalgam Gobhi Achar",
+        "category": "Achar",
+        "price": 95,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Shalgam Gobhi Achar - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_206",
+        "name": "Adrak Achar",
+        "category": "Achar",
+        "price": 150,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Adrak Achar - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_207",
+        "name": "Ram Kela Mango Oil Achar",
+        "category": "Achar",
+        "price": 95,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Ram Kela Mango Oil Achar - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_208",
+        "name": "Mango Lacha Achar",
+        "category": "Achar",
+        "price": 105,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Mango Lacha Achar - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_209",
+        "name": "Dry Mango Achar",
+        "category": "Achar",
+        "price": 105,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Dry Mango Achar - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_210",
+        "name": "Slice Mango Achar",
+        "category": "Achar",
+        "price": 105,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Slice Mango Achar - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_211",
+        "name": "Gajar Achar",
+        "category": "Achar",
+        "price": 95,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Gajar Achar - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_212",
+        "name": "Sweet Lemon Achar",
+        "category": "Achar",
+        "price": 120,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Sweet Lemon Achar - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_213",
+        "name": "Nimbu Achar",
+        "category": "Achar",
+        "price": 120,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Nimbu Achar - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_214",
+        "name": "Kathal Achar",
+        "category": "Achar",
+        "price": 110,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Kathal Achar - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_215",
+        "name": "Hing Aam Achar",
+        "category": "Achar",
+        "price": 110,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Hing Aam Achar - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_216",
+        "name": "Green Chilli Spicy Achar",
+        "category": "Achar",
+        "price": 95,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Green Chilli Spicy Achar - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_217",
+        "name": "Green Chilli Achar",
+        "category": "Achar",
+        "price": 95,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Green Chilli Achar - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_218",
+        "name": "Red Chilli Achar",
+        "category": "Achar",
+        "price": 120,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Red Chilli Achar - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_219",
+        "name": "Teet Achar",
+        "category": "Achar",
+        "price": 130,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Teet Achar - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_220",
+        "name": "Lehsun Chatni",
+        "category": "Achar",
+        "price": 130,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Lehsun Chatni - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_221",
+        "name": "Lehsun Achar",
+        "category": "Achar",
+        "price": 140,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Lehsun Achar - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_222",
+        "name": "Gond",
+        "category": "Masala",
+        "price": 370,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Gond - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_223",
+        "name": "Anistar",
+        "category": "Masala",
+        "price": 700,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Anistar - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_224",
+        "name": "Moti Elaichi",
+        "category": "Masala",
+        "price": 2100,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Moti Elaichi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_225",
+        "name": "Mulethi",
+        "category": "Masala",
+        "price": 273,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Mulethi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_226",
+        "name": "White Mirch",
+        "category": "Masala",
+        "price": 1207,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "White Mirch - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_227",
+        "name": "Kali Mirch",
+        "category": "Masala",
+        "price": 819,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Kali Mirch - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_228",
+        "name": "Gond Katira",
+        "category": "Masala",
+        "price": 400,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Gond Katira - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_229",
+        "name": "Sabja Seed",
+        "category": "Masala",
+        "price": 262,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Sabja Seed - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_230",
+        "name": "Kali Sarso",
+        "category": "Masala",
+        "price": 204,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Kali Sarso - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_231",
+        "name": "Pili Sarso",
+        "category": "Masala",
+        "price": 304,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Pili Sarso - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_232",
+        "name": "Long",
+        "category": "Masala",
+        "price": 1000,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Long - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_233",
+        "name": "Peepli",
+        "category": "Masala",
+        "price": 966,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Peepli - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_234",
+        "name": "Rai",
+        "category": "Namkeen",
+        "price": 250,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Rai - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_235",
+        "name": "Sahi Jeera",
+        "category": "Masala",
+        "price": 1207,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Sahi Jeera - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_236",
+        "name": "Kashmiri Lehsun",
+        "category": "Namkeen",
+        "price": 950,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Kashmiri Lehsun - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_237",
+        "name": "Javitri",
+        "category": "Masala",
+        "price": 1778,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Javitri - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_238",
+        "name": "Chia Seed",
+        "category": "Masala",
+        "price": 278,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Chia Seed - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_239",
+        "name": "Jeera",
+        "category": "Masala",
+        "price": 273,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Jeera - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_240",
+        "name": "Jaifal",
+        "category": "Masala",
+        "price": 997,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Jaifal - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_241",
+        "name": "Chironji",
+        "category": "Masala",
+        "price": 1680,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Chironji - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_242",
+        "name": "Methi Dana",
+        "category": "Masala",
+        "price": 115,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Methi Dana - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_243",
+        "name": "Kamarkas",
+        "category": "Masala",
+        "price": 560,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Kamarkas - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_244",
+        "name": "Black Chohare",
+        "category": "Dry Fruits",
+        "price": 357,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Black Chohare - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_245",
+        "name": "Pila Chohare",
+        "category": "Dry Fruits",
+        "price": 378,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Pila Chohare - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_246",
+        "name": "Choti Kismis",
+        "category": "Dry Fruits",
+        "price": 500,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Choti Kismis - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_247",
+        "name": "Badi Kismis",
+        "category": "Dry Fruits",
+        "price": 570,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Badi Kismis - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_248",
+        "name": "Kaju No 240",
+        "category": "Dry Fruits",
+        "price": 1150,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Kaju No 240 - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_249",
+        "name": "Dal Chini Cinnamon",
+        "category": "Masala",
+        "price": 400,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Dal Chini Cinnamon - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_250",
+        "name": "Dry Pineapple",
+        "category": "Dry Fruits",
+        "price": 450,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Dry Pineapple - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_251",
+        "name": "Red Prunus",
+        "category": "Dry Fruits",
+        "price": 475,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Red Prunus - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_252",
+        "name": "Black Prunus",
+        "category": "Dry Fruits",
+        "price": 475,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Black Prunus - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_253",
+        "name": "Imported Cherry",
+        "category": "Dry Fruits",
+        "price": 500,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Imported Cherry - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_254",
+        "name": "Milet Chidwa Natmat",
+        "category": "Namkeen",
+        "price": 220,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Milet Chidwa Natmat - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_255",
+        "name": "Mexican Nut",
+        "category": "Dry Fruits",
+        "price": 540,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Mexican Nut - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_256",
+        "name": "Party Snacks",
+        "category": "Namkeen",
+        "price": 600,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Party Snacks - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_257",
+        "name": "Roasted Masala Beans",
+        "category": "Namkeen",
+        "price": 650,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Roasted Masala Beans - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_258",
+        "name": "Crane Berry",
+        "category": "Dry Fruits",
+        "price": 510,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Crane Berry - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_259",
+        "name": "Gurbandi",
+        "category": "Dry Fruits",
+        "price": 1100,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Gurbandi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_260",
+        "name": "Sabut Akhrot",
+        "category": "Dry Fruits",
+        "price": 790,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Sabut Akhrot - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_261",
+        "name": "Munakka",
+        "category": "Dry Fruits",
+        "price": 800,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Munakka - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_262",
+        "name": "Black Munakka",
+        "category": "Dry Fruits",
+        "price": 840,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Black Munakka - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_263",
+        "name": "Badam (Mamra)",
+        "category": "Dry Fruits",
+        "price": 1125,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Badam (Mamra) - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_264",
+        "name": "Badam (California)",
+        "category": "Dry Fruits",
+        "price": 1230,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Badam (California) - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_265",
+        "name": "Masala Corn",
+        "category": "Namkeen",
+        "price": 170,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Masala Corn - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_266",
+        "name": "Plain Corn",
+        "category": "Namkeen",
+        "price": 170,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Plain Corn - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_267",
+        "name": "Anjeer Badi",
+        "category": "Dry Fruits",
+        "price": 1700,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Anjeer Badi - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_268",
+        "name": "Dehradun Milk Rusk",
+        "category": "Biscuits",
+        "price": 82,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Dehradun Milk Rusk - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_269",
+        "name": "Saunf Rusk",
+        "category": "Biscuits",
+        "price": 82,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Saunf Rusk - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_270",
+        "name": "Marori Rusk",
+        "category": "Biscuits",
+        "price": 82,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Marori Rusk - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_271",
+        "name": "Gur Atta Rusk",
+        "category": "Biscuits",
+        "price": 82,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Gur Atta Rusk - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_272",
+        "name": "French Heart Biscuit",
+        "category": "Biscuits",
+        "price": 117,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "French Heart Biscuit - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_273",
+        "name": "Khari Biscuit",
+        "category": "Biscuits",
+        "price": 117,
+        "weightOptions": [
+            "1 Box"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Khari Biscuit - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_274",
+        "name": "Seedless Khajur",
+        "category": "Dry Fruits",
+        "price": 195,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Seedless Khajur - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_275",
+        "name": "Kalmi Khajur",
+        "category": "Dry Fruits",
+        "price": 417,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Kalmi Khajur - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_276",
+        "name": "Arabian Date",
+        "category": "Dry Fruits",
+        "price": 225,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Arabian Date - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_277",
+        "name": "Noori Dates",
+        "category": "Dry Fruits",
+        "price": 309,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Noori Dates - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_278",
+        "name": "Sharbati Dates",
+        "category": "Dry Fruits",
+        "price": 224,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Sharbati Dates - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_279",
+        "name": "Zahidi Dates",
+        "category": "Dry Fruits",
+        "price": 146,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Zahidi Dates - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_280",
+        "name": "Choti Anjeer",
+        "category": "Dry Fruits",
+        "price": 1500,
+        "weightOptions": [
+            "250g",
+            "500g",
+            "1kg"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Choti Anjeer - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    },
+    {
+        "id": "prod_281",
+        "name": "Suji Rusk",
+        "category": "Biscuits",
+        "price": 80,
+        "weightOptions": [
+            "1 Pack"
+        ],
+        "stock": 25,
+        "imageUrl": "",
+        "description": "Suji Rusk - premium quality, sourced fresh for Sindhi Namkeen & Dry Fruits, Rohtak.",
+        "isFeatured": false,
+        "rating": 4.5
+    }
+]
