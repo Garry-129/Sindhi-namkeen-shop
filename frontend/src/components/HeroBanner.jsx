@@ -1,5 +1,16 @@
 import React from 'react';
 import { ShoppingCart, Sparkles, MapPin, Award, Truck, CheckCircle2 } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { initialProducts } from '../data/sampleProducts';
+
+const heroSlides = [
+    { product: initialProducts.find((product) => product.category === 'Namkeen'), label: 'Rohtak Favorite' },
+    { product: initialProducts.find((product) => product.category === 'Dry Fruits'), label: 'Hand-picked Goodness' },
+    { product: initialProducts.find((product) => product.category === 'Biscuits'), label: 'Made for Tea Time' },
+].filter((slide) => slide.product);
+
+const heroFallbackImage = heroSlides[0]?.product.imageUrl || '/images/products/placeholder.svg';
 
 const HeroBanner = ({ onShopNowClick, onOpenMap }) => {
     return (
@@ -92,37 +103,40 @@ const HeroBanner = ({ onShopNowClick, onOpenMap }) => {
                     </div>
                 </div>
 
-                {/* Right Image Feature Card */}
-                <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
-                    <div style={{
-                        position: 'relative',
-                        width: '100%',
-                        maxWidth: '420px',
-                        borderRadius: '24px',
-                        overflow: 'hidden',
-                        boxShadow: 'var(--shadow-lg)',
-                        border: '6px solid #ffffff',
-                        background: '#ffffff',
-                    }}>
-                        <img
-                            src="https://images.unsplash.com/photo-1626132647523-66f5bf380027?auto=format&fit=crop&w=800&q=80"
-                            alt="Sindhi Special Mixture"
-                            style={{ width: '100%', height: '340px', objectFit: 'cover' }}
-                        />
-                        <div style={{
-                            position: 'absolute',
-                            bottom: 0,
-                            left: 0,
-                            right: 0,
-                            background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%)',
-                            padding: '1.5rem 1.25rem 1.25rem 1.25rem',
-                            color: '#ffffff',
-                        }}>
-                            <span className="badge badge-gold" style={{ marginBottom: '0.4rem' }}>⭐ Best Seller</span>
-                            <h3 style={{ color: '#ffffff', fontSize: '1.25rem' }}>Special Sindhi Mixture</h3>
-                            <p style={{ fontSize: '0.85rem', opacity: 0.9 }}>Rohtak's favorite crispy savory treat</p>
-                        </div>
-                    </div>
+                {/* Right Image Carousel */}
+                <div className="hero-carousel-wrap">
+                    <Swiper
+                        modules={[Autoplay, Navigation, Pagination]}
+                        autoplay={{ delay: 4500, disableOnInteraction: false, pauseOnMouseEnter: true }}
+                        navigation
+                        pagination={{ clickable: true }}
+                        loop={heroSlides.length > 1}
+                        speed={650}
+                        grabCursor
+                        className="hero-carousel-swiper"
+                    >
+                        {heroSlides.map(({ product, label }) => (
+                            <SwiperSlide key={product._id || product.id || product.name}>
+                                <div className="hero-carousel-slide">
+                                    <img
+                                        src={product.imageUrl || heroFallbackImage}
+                                        alt={product.name}
+                                        onError={(event) => {
+                                            if (!event.currentTarget.dataset.fallbackApplied) {
+                                                event.currentTarget.dataset.fallbackApplied = 'true';
+                                                event.currentTarget.src = heroFallbackImage;
+                                            }
+                                        }}
+                                    />
+                                    <div className="hero-carousel-caption">
+                                        <span className="badge badge-gold">{label}</span>
+                                        <h3>{product.name}</h3>
+                                        <p>{product.description}</p>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                 </div>
             </div>
 

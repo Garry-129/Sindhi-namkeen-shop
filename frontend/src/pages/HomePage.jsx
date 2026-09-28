@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import Navbar from '../components/Navbar';
 import HeroBanner from '../components/HeroBanner';
 import CategoryFilter from '../components/CategoryFilter';
@@ -11,6 +16,13 @@ import { fetchProducts } from '../services/api';
 import { initialProducts } from '../data/sampleProducts';
 import { Sparkles, ShieldCheck, HeartHandshake, PackageCheck, AlertCircle } from 'lucide-react';
 
+const getInitialProductLimit = (width) => {
+    if (width <= 350) return 3;
+    if (width <= 768) return 6;
+    if (width <= 1024) return 9;
+    return 12;
+};
+
 const HomePage = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const categoryFromUrl = searchParams.get('category') || 'All';
@@ -21,6 +33,13 @@ const HomePage = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [activeModalProduct, setActiveModalProduct] = useState(null);
     const [isMapModalOpen, setIsMapModalOpen] = useState(false);
+    const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const updateViewportWidth = () => setViewportWidth(window.innerWidth);
+        window.addEventListener('resize', updateViewportWidth);
+        return () => window.removeEventListener('resize', updateViewportWidth);
+    }, []);
 
     useEffect(() => {
         setSelectedCategory(categoryFromUrl);
@@ -70,6 +89,10 @@ const HomePage = () => {
             });
         }
     };
+
+    const initialProductLimit = getInitialProductLimit(viewportWidth);
+    const gridProducts = products.slice(0, initialProductLimit);
+    const remainingProducts = products.slice(initialProductLimit);
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', width: '100%', maxWidth: '100vw', overflowX: 'hidden' }}>
@@ -123,15 +146,52 @@ const HomePage = () => {
                         <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem' }}>Try adjusting your search or category filter.</p>
                     </div>
                 ) : (
-                    <div className="product-grid" style={{ marginBottom: '3rem' }}>
-                        {products.map((prod) => (
-                            <ProductCard
-                                key={prod._id || prod.id}
-                                product={prod}
-                                onViewDetails={(item) => setActiveModalProduct(item)}
-                            />
-                        ))}
-                    </div>
+                    <>
+                        <div className="product-grid" style={{ marginBottom: remainingProducts.length ? '1.5rem' : '3rem' }}>
+                            {gridProducts.map((prod) => (
+                                <ProductCard
+                                    key={prod._id || prod.id}
+                                    product={prod}
+                                    onViewDetails={(item) => setActiveModalProduct(item)}
+                                />
+                            ))}
+                        </div>
+                        {remainingProducts.length > 0 && (
+                            <section className="product-rail-section" aria-label="More products">
+                                <div className="product-rail-heading">
+                                    <div>
+                                        <h3>More to explore</h3>
+                                        <p>{remainingProducts.length} more {remainingProducts.length === 1 ? 'product' : 'products'}</p>
+                                    </div>
+                                    <span className="product-rail-hint">Swipe or drag to browse</span>
+                                </div>
+                                <Swiper
+                                    modules={[Navigation, Pagination]}
+                                    navigation
+                                    pagination={{ clickable: true }}
+                                    grabCursor
+                                    watchOverflow
+                                    spaceBetween={12}
+                                    slidesPerView={1.08}
+                                    breakpoints={{
+                                        351: { slidesPerView: 2.12, spaceBetween: 14 },
+                                        769: { slidesPerView: 3.12, spaceBetween: 18 },
+                                        1025: { slidesPerView: 4.12, spaceBetween: 20 },
+                                    }}
+                                    className="product-rail-swiper"
+                                >
+                                    {remainingProducts.map((prod) => (
+                                        <SwiperSlide key={prod._id || prod.id}>
+                                            <ProductCard
+                                                product={prod}
+                                                onViewDetails={(item) => setActiveModalProduct(item)}
+                                            />
+                                        </SwiperSlide>
+                                    ))}
+                                </Swiper>
+                            </section>
+                        )}
+                    </>
                 )}
 
                 {/* Store Trust Features Banner */}
