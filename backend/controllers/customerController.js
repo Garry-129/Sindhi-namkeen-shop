@@ -1,7 +1,10 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
+import { randomInt } from 'node:crypto';
 import Customer from '../models/Customer.js';
+import CustomerOtp from '../models/CustomerOtp.js';
 import Order from '../models/Order.js';
+import { sendCustomerOtpEmail } from '../utils/sendCustomerOtpEmail.js';
 
 let fallbackCustomers = [];
 
@@ -15,112 +18,137 @@ const generateCustomerToken = (id, email, name) => {
     });
 };
 
-// @desc    Register a new customer
-// @route   POST /api/customers/register
-export const registerCustomer = async (req, res) => {
+const OTP_LIFETIME_MS = 10 * 60 * 1000;
+const MAX_OTP_RESENDS = 3;
+const MAX_OTP_ATTEMPTS = 5;
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const normalizeEmail = (email) => typeof email === 'string' ? email.trim().toLowerCase() : '';
+
+const invalidOtpResponse = (res) => res.status(400).json({
+    success: false,
+    message: 'The verification code is invalid or expired. Request a new code and try again.',
+});
+
+// @desc    Send a customer verification code
+// @route   POST /api/customers/request-otp
+export const requestCustomerOtp = async (req, res) => {
     try {
-        const { name, email, password, phone } = req.body;
-
-        if (!name || !email || !password || !phone) {
-            return res.status(400).json({ success: false, message: 'Name, email, password, and phone number are required' });
+        const emailAddress = typeof req.body?.email === 'string' ? req.body.email.trim() : '';
+        const email = normalizeEmail(emailAddress);
+        if (!EMAIL_PATTERN.test(email)) {
+            return res.status(400).json({ success: false, message: 'Enter a valid email address.' });
         }
 
-        const cleanEmail = email.toLowerCase().trim();
-
-        let existingCustomer = null;
-        try {
-            existingCustomer = await Customer.findOne({ email: cleanEmail });
-        } catch (dbErr) {
-            existingCustomer = fallbackCustomers.find(c => c.email === cleanEmail);
+        const now = new Date();
+        const current = await CustomerOtp.findOne({ email });
+        if (current && current.expiresAt > now && now.getTime() - current.lastSentAt.getTime() < 60 * 1000) {
+            return res.status(429).json({ success: false, message: 'Please wait before requesting another code.' });
+        }
+        if (current && current.expiresAt > now && current.resendCount >= MAX_OTP_RESENDS) {
+            return res.status(429).json({ success: false, message: 'Too many code requests. Please try again later.' });
         }
 
-        if (existingCustomer) {
-            return res.status(400).json({ success: false, message: 'An account with this email already exists' });
+        const otp = String(randomInt(0, 1_000_000)).padStart(6, '0');
+        const otpHash = await bcrypt.hash(otp, 10);
+        const expiresAt = new Date(now.getTime() + OTP_LIFETIME_MS);
+
+        if (current && current.expiresAt > now) {
+            const updated = await CustomerOtp.findOneAndUpdate(
+                {
+                    _id: current._id,
+                    resendCount: { $lt: MAX_OTP_RESENDS },
+                    expiresAt: { $gt: now },
+                    lastSentAt: current.lastSentAt,
+                },
+                {
+                    $set: { otpHash, expiresAt, attempts: 0, lastSentAt: now },
+                    $inc: { resendCount: 1 },
+                },
+                { new: true }
+            );
+            if (!updated) {
+                return res.status(429).json({ success: false, message: 'Too many code requests. Please try again later.' });
+            }
+        } else if (current) {
+            const reset = await CustomerOtp.updateOne(
+                { _id: current._id, expiresAt: { $lte: now } },
+                { $set: { otpHash, expiresAt, attempts: 0, resendCount: 1, lastSentAt: now } }
+            );
+            if (reset.matchedCount !== 1) {
+                return res.status(429).json({ success: false, message: 'Please wait before requesting another code.' });
+            }
+        } else {
+            try {
+                await CustomerOtp.create({ email, otpHash, expiresAt, attempts: 0, resendCount: 1, lastSentAt: now });
+            } catch (error) {
+                if (error.code !== 11000) throw error;
+                return res.status(429).json({ success: false, message: 'Please wait before requesting another code.' });
+            }
         }
 
-        let newCustomer;
-        try {
-            newCustomer = await Customer.create({
-                name: name.trim(),
-                email: cleanEmail,
-                password,
-                phone: phone.trim(),
-                addresses: [],
-            });
-        } catch (err) {
-            const salt = await bcrypt.genSalt(10);
-            const hashedPassword = await bcrypt.hash(password, salt);
-            newCustomer = {
-                _id: `cust_${Date.now()}`,
-                name: name.trim(),
-                email: cleanEmail,
-                password: hashedPassword,
-                phone: phone.trim(),
-                addresses: [],
-                createdAt: new Date().toISOString(),
-                matchPassword: async function (p) { return await bcrypt.compare(p, this.password); }
-            };
-            fallbackCustomers.push(newCustomer);
-        }
-
-        const token = generateCustomerToken(newCustomer._id, newCustomer.email, newCustomer.name);
-
-        res.status(201).json({
+        await sendCustomerOtpEmail(emailAddress, otp);
+        return res.json({
             success: true,
-            message: 'Customer registered successfully',
-            token,
-            customer: {
-                id: newCustomer._id,
-                name: newCustomer.name,
-                email: newCustomer.email,
-                phone: newCustomer.phone,
-                addresses: newCustomer.addresses || [],
-            },
+            message: 'If this address can receive email, a verification code has been sent.',
+            expiresInSeconds: OTP_LIFETIME_MS / 1000,
+            resendAvailableInSeconds: 60,
         });
-    } catch (error) {
-        res.status(500).json({ success: false, message: error.message });
+    } catch {
+        return res.status(503).json({ success: false, message: 'Unable to send a verification code right now. Please try again later.' });
     }
 };
 
-// @desc    Customer login
-// @route   POST /api/customers/login
-export const loginCustomer = async (req, res) => {
+// @desc    Verify a customer code and issue the existing customer JWT
+// @route   POST /api/customers/verify-otp
+export const verifyCustomerOtp = async (req, res) => {
     try {
-        const { email, password } = req.body;
-
-        if (!email || !password) {
-            return res.status(400).json({ success: false, message: 'Email and password required' });
+        const email = normalizeEmail(req.body?.email);
+        const otp = typeof req.body?.otp === 'string' ? req.body.otp : '';
+        if (!EMAIL_PATTERN.test(email) || !/^\d{6}$/.test(otp)) {
+            return invalidOtpResponse(res);
         }
 
-        const cleanEmail = email.toLowerCase().trim();
-
-        let customer = null;
-        try {
-            customer = await Customer.findOne({ email: cleanEmail });
-        } catch (dbErr) {
-            customer = fallbackCustomers.find(c => c.email === cleanEmail);
+        const now = new Date();
+        const record = await CustomerOtp.findOne({ email, expiresAt: { $gt: now } });
+        if (!record) return invalidOtpResponse(res);
+        if (record.attempts >= MAX_OTP_ATTEMPTS) {
+            return res.status(429).json({ success: false, message: 'Too many incorrect codes. Request a new code.' });
         }
 
+        const attempt = await CustomerOtp.findOneAndUpdate(
+            { _id: record._id, attempts: { $lt: MAX_OTP_ATTEMPTS }, expiresAt: { $gt: now } },
+            { $inc: { attempts: 1 } },
+            { new: true }
+        );
+        if (!attempt) return invalidOtpResponse(res);
+
+        if (!(await bcrypt.compare(otp, record.otpHash))) {
+            return invalidOtpResponse(res);
+        }
+
+        const consumed = await CustomerOtp.findOneAndDelete({
+            _id: record._id,
+            otpHash: record.otpHash,
+            expiresAt: { $gt: new Date() },
+        });
+        if (!consumed) return invalidOtpResponse(res);
+
+        let customer = await Customer.findOne({ email });
         if (!customer) {
-            return res.status(401).json({ success: false, message: 'Invalid email or password' });
+            try {
+                customer = await Customer.create({ email, addresses: [] });
+            } catch (error) {
+                if (error.code !== 11000) throw error;
+                customer = await Customer.findOne({ email });
+            }
         }
-
-        let isMatch = false;
-        if (typeof customer.matchPassword === 'function') {
-            isMatch = await customer.matchPassword(password);
-        } else {
-            isMatch = await bcrypt.compare(password, customer.password);
-        }
-
-        if (!isMatch) {
-            return res.status(401).json({ success: false, message: 'Invalid email or password' });
-        }
+        if (!customer) throw new Error('Customer could not be loaded after verification');
 
         const token = generateCustomerToken(customer._id, customer.email, customer.name);
-
-        res.json({
+        return res.json({
             success: true,
-            message: 'Customer logged in successfully',
+            message: 'Email verified successfully.',
             token,
             customer: {
                 id: customer._id,
@@ -130,8 +158,8 @@ export const loginCustomer = async (req, res) => {
                 addresses: customer.addresses || [],
             },
         });
-    } catch (error) {
-        res.status(500).json({ success: false, message: error.message });
+    } catch {
+        return res.status(500).json({ success: false, message: 'Unable to verify the code right now. Please try again.' });
     }
 };
 

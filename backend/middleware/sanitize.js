@@ -1,8 +1,8 @@
 // Utility to recursively sanitize object inputs and prevent NoSQL injection ($ and . operator injection)
 const sanitizeValue = (data) => {
     if (typeof data === 'string') {
-        // Strip out dollar signs and dots that could be used in Mongoose query operators
-        return data.replace(/[\$\.]/g, '');
+        // Dollar signs in values are stripped; dots are valid data such as email addresses.
+        return data.replace(/\$/g, '');
     }
     if (Array.isArray(data)) {
         return data.map(item => sanitizeValue(item));

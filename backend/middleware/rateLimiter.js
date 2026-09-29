@@ -28,6 +28,30 @@ export const customerAuthLimiter = rateLimit({
     legacyHeaders: false,
 });
 
+export const requestCustomerOtpLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 5,
+    statusCode: 429,
+    message: {
+        success: false,
+        message: 'Too many code requests. Please try again later.',
+    },
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+
+export const verifyCustomerOtpLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 10,
+    statusCode: 429,
+    message: {
+        success: false,
+        message: 'Too many verification attempts. Please try again later.',
+    },
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+
 // General rate limiter for public routes (e.g. order tracking): max 100 requests per 15 minutes
 export const generalPublicLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes

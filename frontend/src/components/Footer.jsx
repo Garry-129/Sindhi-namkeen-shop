@@ -2,6 +2,7 @@ import React from 'react';
 import { MapPin, Phone, MessageSquare, Clock, Heart, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import LocationMap from './LocationMap';
+import { categories } from '../data/categories';
 
 const Footer = () => {
     const shopPhone = '+91 9138592984';
@@ -90,9 +91,10 @@ const Footer = () => {
                             Categories & Links
                         </h4>
                         <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.9rem', color: '#d4c6bc' }}>
-                            <li><Link to="/?category=Namkeen" style={{ hover: { color: 'var(--primary)' } }}>🥨 Special Namkeen</Link></li>
-                            <li><Link to="/?category=Dry Fruits">🥜 Gourmet Dry Fruits</Link></li>
-                            <li><Link to="/?category=Biscuits">🍪 Bakery Biscuits</Link></li>
+                            {categories.map((category) => (
+                                <li key={category.slug}><Link to={`/category/${category.slug}`}>{category.name}</Link></li>
+                            ))}
+                            <li><Link to="/search">Search products</Link></li>
                             <li><Link to="/cart">🛒 View Shopping Cart</Link></li>
                             <li><Link to="/admin/login" style={{ color: '#88766c', fontSize: '0.8rem' }}>🔒 Admin Portal Login</Link></li>
                         </ul>

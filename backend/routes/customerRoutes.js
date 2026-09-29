@@ -1,7 +1,7 @@
 import express from 'express';
 import {
-    registerCustomer,
-    loginCustomer,
+    requestCustomerOtp,
+    verifyCustomerOtp,
     getCustomerProfile,
     updateCustomerProfile,
     addAddress,
@@ -10,14 +10,13 @@ import {
     getCustomerOrders,
 } from '../controllers/customerController.js';
 import { protectCustomer } from '../middleware/customerAuthMiddleware.js';
-import { customerAuthLimiter } from '../middleware/rateLimiter.js';
-import { validateCustomerRegister, validateCustomerLogin } from '../middleware/sanitize.js';
+import { requestCustomerOtpLimiter, verifyCustomerOtpLimiter } from '../middleware/rateLimiter.js';
 
 const router = express.Router();
 
 // Public auth routes
-router.post('/register', customerAuthLimiter, validateCustomerRegister, registerCustomer);
-router.post('/login', customerAuthLimiter, validateCustomerLogin, loginCustomer);
+router.post('/request-otp', requestCustomerOtpLimiter, requestCustomerOtp);
+router.post('/verify-otp', verifyCustomerOtpLimiter, verifyCustomerOtp);
 
 // Protected customer profile routes
 router.get('/me', protectCustomer, getCustomerProfile);

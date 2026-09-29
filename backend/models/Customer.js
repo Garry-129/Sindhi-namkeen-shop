@@ -22,6 +22,7 @@ const customerSchema = new mongoose.Schema(
         name: {
             type: String,
             required: true,
+            default: 'Customer',
             trim: true,
         },
         email: {
@@ -33,11 +34,10 @@ const customerSchema = new mongoose.Schema(
         },
         password: {
             type: String,
-            required: true,
         },
         phone: {
             type: String,
-            required: true,
+            default: '',
             trim: true,
         },
         addresses: [addressSchema],

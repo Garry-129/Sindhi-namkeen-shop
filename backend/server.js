@@ -15,6 +15,7 @@ import seedRoutes from './routes/seedRoutes.js';
 dotenv.config();
 
 const app = express();
+app.set('trust proxy', 1);
 
 // Set HTTP Security Headers via Helmet
 app.use(helmet());

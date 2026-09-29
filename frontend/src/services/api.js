@@ -158,6 +158,28 @@ export const trackOrderApi = async ({ orderNumber, phone }) => {
 };
 
 // Customer API Services
+export const requestCustomerOtpApi = async (payload) => {
+    try {
+        const res = await api.post('/customers/request-otp', payload);
+        return res.data;
+    } catch (err) {
+        const errorData = err.response?.data || { message: 'Unable to send a verification code' };
+        if (err.response?.status) errorData.status = err.response.status;
+        throw errorData;
+    }
+};
+
+export const verifyCustomerOtpApi = async (payload) => {
+    try {
+        const res = await api.post('/customers/verify-otp', payload);
+        return res.data;
+    } catch (err) {
+        const errorData = err.response?.data || { message: 'Unable to verify the code' };
+        if (err.response?.status) errorData.status = err.response.status;
+        throw errorData;
+    }
+};
+
 export const customerRegisterApi = async (customerData) => {
     try {
         const res = await api.post('/customers/register', customerData);

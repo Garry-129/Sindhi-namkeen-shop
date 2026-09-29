@@ -1,18 +1,17 @@
 import React from 'react';
 import { ShoppingCart, Sparkles, MapPin, Award, Truck, CheckCircle2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
-import { initialProducts } from '../data/sampleProducts';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-const heroSlides = [
-    { product: initialProducts.find((product) => product.category === 'Namkeen'), label: 'Rohtak Favorite' },
-    { product: initialProducts.find((product) => product.category === 'Dry Fruits'), label: 'Hand-picked Goodness' },
-    { product: initialProducts.find((product) => product.category === 'Biscuits'), label: 'Made for Tea Time' },
-].filter((slide) => slide.product);
+const HeroBanner = ({ products = [], onShopNowClick, onOpenMap }) => {
+    const labels = ['Rohtak favourite', 'From our counter', 'Made for sharing'];
+    const heroSlides = products.slice(0, 3).map((product, index) => ({ product, label: labels[index] }));
+    const heroFallbackImage = heroSlides[0]?.product.imageUrl || '/images/products/placeholder.svg';
 
-const heroFallbackImage = heroSlides[0]?.product.imageUrl || '/images/products/placeholder.svg';
-
-const HeroBanner = ({ onShopNowClick, onOpenMap }) => {
     return (
         <section style={{
             background: 'linear-gradient(135deg, #fff7f2 0%, #fdf0e6 40%, #fae5d3 100%)',
@@ -21,7 +20,7 @@ const HeroBanner = ({ onShopNowClick, onOpenMap }) => {
             position: 'relative',
             overflow: 'hidden',
         }}>
-            <div className="container" style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '2.5rem', alignItems: 'center' }}>
+            <div className="container hero-banner-layout" style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '2.5rem', alignItems: 'center' }}>
                 {/* Left Text Content */}
                 <div className="animate-fade-in">
                     <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', backgroundColor: '#ffffff', padding: '0.4rem 0.9rem', borderRadius: 'var(--radius-full)', border: '1px solid var(--border-light)', boxShadow: 'var(--shadow-sm)', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
@@ -67,7 +66,7 @@ const HeroBanner = ({ onShopNowClick, onOpenMap }) => {
                         )}
                     </div>
 
-                    <h2 style={{ fontSize: '2.8rem', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.03em', lineHeight: 1.15, marginBottom: '1rem' }}>
+                    <h2 className="hero-title" style={{ fontSize: '2.8rem', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.03em', lineHeight: 1.15, marginBottom: '1rem' }}>
                         Authentic Sindhi Namkeen & <span style={{ color: 'var(--primary)' }}>Gourmet Dry Fruits</span>
                     </h2>
 
@@ -80,10 +79,10 @@ const HeroBanner = ({ onShopNowClick, onOpenMap }) => {
                             <ShoppingCart size={18} />
                             Shop Fresh Namkeen
                         </button>
-                        <a href="#dry-fruits" onClick={onShopNowClick} className="btn-secondary" style={{ fontSize: '1rem', padding: '0.85rem 1.5rem' }}>
+                        <Link to="/category/dry-fruits" className="btn-secondary" style={{ fontSize: '1rem', padding: '0.85rem 1.5rem' }}>
                             <Sparkles size={18} color="var(--secondary)" />
                             Browse Dry Fruits
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Highlights */}
@@ -105,6 +104,9 @@ const HeroBanner = ({ onShopNowClick, onOpenMap }) => {
 
                 {/* Right Image Carousel */}
                 <div className="hero-carousel-wrap">
+                    {heroSlides.length === 0 ? (
+                        <div className="hero-carousel-loading" role="status">Loading fresh picks...</div>
+                    ) : (
                     <Swiper
                         modules={[Autoplay, Navigation, Pagination]}
                         autoplay={{ delay: 4500, disableOnInteraction: false, pauseOnMouseEnter: true }}
@@ -137,12 +139,17 @@ const HeroBanner = ({ onShopNowClick, onOpenMap }) => {
                             </SwiperSlide>
                         ))}
                     </Swiper>
+                    )}
                 </div>
             </div>
 
             <style>{`
         @media (max-width: 900px) {
-          .container { grid-template-columns: 1fr !important; }
+                    .hero-banner-layout { grid-template-columns: 1fr !important; }
+                }
+                @media (max-width: 600px) {
+                    .hero-title { font-size: 2rem !important; }
+                    .hero-banner-layout { gap: 1.5rem !important; }
         }
       `}</style>
         </section>

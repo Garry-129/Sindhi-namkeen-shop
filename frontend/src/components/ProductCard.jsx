@@ -1,12 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ShoppingCart, Star, Eye, Check } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+
+const PRODUCT_IMAGE_PLACEHOLDER = '/images/products/placeholder.svg';
 
 const ProductCard = ({ product, onViewDetails }) => {
     const { addToCart } = useCart();
     const weightOptions = product.weightOptions && product.weightOptions.length > 0 ? product.weightOptions : ['250g', '500g', '1kg'];
     const [selectedWeight, setSelectedWeight] = useState(weightOptions[0] || '250g');
     const [added, setAdded] = useState(false);
+    const [imageSource, setImageSource] = useState(product.imageUrl || PRODUCT_IMAGE_PLACEHOLDER);
+    const [imageLoaded, setImageLoaded] = useState(false);
+
+    useEffect(() => {
+        setImageSource(product.imageUrl || PRODUCT_IMAGE_PLACEHOLDER);
+        setImageLoaded(false);
+    }, [product.imageUrl]);
+
+    const handleImageError = () => {
+        setImageLoaded(false);
+        setImageSource((currentSource) => (
+            currentSource === PRODUCT_IMAGE_PLACEHOLDER ? null : PRODUCT_IMAGE_PLACEHOLDER
+        ));
+    };
 
     // Weight multiplier calculation (250g base, 500g = 2x, 1kg = 4x)
     const getMultiplier = (weight) => {
@@ -46,14 +62,21 @@ const ProductCard = ({ product, onViewDetails }) => {
         >
             {/* Category Badge & Rating Header */}
             <div className="product-card-img-container" style={{ position: 'relative', height: '160px', overflow: 'hidden', backgroundColor: 'var(--bg-muted)' }}>
-                <img
-                    src={product.imageUrl || '/images/products/placeholder.svg'}
-                    alt={product.name}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s ease' }}
-                    onError={(e) => {
-                        e.target.src = '/images/products/placeholder.svg';
-                    }}
-                />
+                {imageSource && (
+                    <img
+                        src={imageSource}
+                        alt=""
+                        onLoad={() => setImageLoaded(true)}
+                        onError={handleImageError}
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            transition: 'transform 0.3s ease',
+                            visibility: imageLoaded ? 'visible' : 'hidden',
+                        }}
+                    />
+                )}
                 <div style={{ position: 'absolute', top: '8px', left: '8px', display: 'flex', gap: '0.3rem', flexWrap: 'wrap' }}>
                     <span className="badge badge-saffron" style={{ fontSize: '0.68rem', padding: '0.15rem 0.5rem' }}>{product.category}</span>
                     {product.isFeatured && <span className="badge badge-gold" style={{ fontSize: '0.68rem', padding: '0.15rem 0.5rem' }}>Featured</span>}
@@ -90,6 +113,7 @@ const ProductCard = ({ product, onViewDetails }) => {
 
                 {/* Weight Selector Pills */}
                 <div
+                    className="product-card-weight-options"
                     onClick={(e) => e.stopPropagation()}
                     style={{ display: 'flex', gap: '0.25rem', marginBottom: '0.75rem', flexWrap: 'wrap' }}
                 >

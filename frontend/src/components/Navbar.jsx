@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { ShoppingBag, Search, MapPin, ShieldCheck, Menu, X, PhoneCall, Truck, User, LogOut, Package, ChevronDown, ChevronUp } from 'lucide-react';
+import { ShoppingBag, Search, MapPin, ShieldCheck, Menu, X, PhoneCall, Truck, User, LogOut, Package, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { useCustomerAuth } from '../context/CustomerAuthContext';
+import { categories } from '../data/categories';
 
 const Navbar = () => {
     const { totalItemCount } = useCart();
@@ -14,6 +15,7 @@ const Navbar = () => {
     const [seeMoreOpen, setSeeMoreOpen] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [desktopMoreOpen, setDesktopMoreOpen] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
 
     const dropdownRef = useRef(null);
     const desktopMoreRef = useRef(null);
@@ -35,32 +37,18 @@ const Navbar = () => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
-    const scrollToCategorySection = () => {
-        setTimeout(() => {
-            const section = document.getElementById('category-filter-section');
-            if (section) {
-                const navbarHeight = 80;
-                const elementPosition = section.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = elementPosition - navbarHeight;
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        }, 120);
-    };
-
     const handleCategoryClick = (category) => {
         setMobileMenuOpen(false);
         setDesktopMoreOpen(false);
-        if (location.pathname !== '/') {
-            navigate(`/?category=${category}`);
-        } else {
-            const searchParams = new URLSearchParams(location.search);
-            searchParams.set('category', category);
-            navigate(`/?${searchParams.toString()}`);
-        }
-        scrollToCategorySection();
+        const selectedCategory = categories.find((item) => item.name === category);
+        if (selectedCategory) navigate(`/category/${selectedCategory.slug}`);
+    };
+
+    const handleSearchSubmit = (event) => {
+        event.preventDefault();
+        const query = searchTerm.trim();
+        navigate(query ? `/search?q=${encodeURIComponent(query)}` : '/search');
+        setMobileMenuOpen(false);
     };
 
     return (
@@ -121,54 +109,6 @@ const Navbar = () => {
                         Home
                     </Link>
 
-                    <button
-                        onClick={() => handleCategoryClick('Namkeen')}
-                        style={{
-                            background: 'none',
-                            font: 'inherit',
-                            fontWeight: 500,
-                            color: 'var(--text-main)',
-                            cursor: 'pointer',
-                            minHeight: '44px',
-                            padding: '0 0.25rem',
-                            whiteSpace: 'nowrap',
-                        }}
-                    >
-                        Namkeen
-                    </button>
-
-                    <button
-                        onClick={() => handleCategoryClick('Dry Fruits')}
-                        style={{
-                            background: 'none',
-                            font: 'inherit',
-                            fontWeight: 500,
-                            color: 'var(--text-main)',
-                            cursor: 'pointer',
-                            minHeight: '44px',
-                            padding: '0 0.25rem',
-                            whiteSpace: 'nowrap',
-                        }}
-                    >
-                        Dry Fruits
-                    </button>
-
-                    <button
-                        onClick={() => handleCategoryClick('Biscuits')}
-                        style={{
-                            background: 'none',
-                            font: 'inherit',
-                            fontWeight: 500,
-                            color: 'var(--text-main)',
-                            cursor: 'pointer',
-                            minHeight: '44px',
-                            padding: '0 0.25rem',
-                            whiteSpace: 'nowrap',
-                        }}
-                    >
-                        Biscuits
-                    </button>
-
                     {/* Desktop "More ▾" Dropdown */}
                     <div style={{ position: 'relative' }} ref={desktopMoreRef}>
                         <button
@@ -187,7 +127,7 @@ const Navbar = () => {
                                 whiteSpace: 'nowrap',
                             }}
                         >
-                            <span>More</span>
+                            <span>Shop categories</span>
                             <ChevronDown size={15} style={{ transform: desktopMoreOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s ease' }} />
                         </button>
 
@@ -207,10 +147,10 @@ const Navbar = () => {
                                     zIndex: 110,
                                 }}
                             >
-                                {['Mukhwas', 'Papad', 'Achar', 'Masala'].map((category) => (
+                                {categories.map((category) => (
                                     <button
-                                        key={category}
-                                        onClick={() => handleCategoryClick(category)}
+                                        key={category.slug}
+                                        onClick={() => handleCategoryClick(category.name)}
                                         style={{
                                             display: 'flex',
                                             alignItems: 'center',
@@ -236,16 +176,24 @@ const Navbar = () => {
                                             e.currentTarget.style.color = 'var(--text-main)';
                                         }}
                                     >
-                                        {category === 'Mukhwas' && '🌿'}
-                                        {category === 'Papad' && '🫓'}
-                                        {category === 'Achar' && '🫙'}
-                                        {category === 'Masala' && '🌶️'}
-                                        <span>{category}</span>
+                                        <span>{category.name}</span>
                                     </button>
                                 ))}
                             </div>
                         )}
                     </div>
+
+                    <form className="nav-search" role="search" onSubmit={handleSearchSubmit}>
+                        <Search size={18} aria-hidden="true" />
+                        <input
+                            type="search"
+                            value={searchTerm}
+                            onChange={(event) => setSearchTerm(event.target.value)}
+                            placeholder="Search for products..."
+                            aria-label="Search for products"
+                        />
+                        <button type="submit" aria-label="Search"><ArrowRight size={18} /></button>
+                    </form>
 
                     <Link
                         to="/track-order"
@@ -266,6 +214,9 @@ const Navbar = () => {
 
                 {/* Right Actions (Cart, Customer Account, Mobile Toggle) */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexShrink: 0 }}>
+                    <Link to="/search" className="mobile-search-trigger" aria-label="Search products" title="Search products">
+                        <Search size={20} />
+                    </Link>
                     {/* Customer Account Button */}
                     {isCustomerAuthenticated ? (
                         <div style={{ position: 'relative' }} ref={dropdownRef}>
@@ -574,9 +525,29 @@ const Navbar = () => {
             )}
 
             <style>{`
+                .store-nav-main { gap: 1rem; }
+                .desktop-nav { gap: 0.85rem !important; flex: 1; justify-content: center; min-width: 0; }
+                .nav-search {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.55rem;
+                    width: min(32vw, 360px);
+                    min-width: 200px;
+                    min-height: 44px;
+                    padding: 0 0.45rem 0 0.85rem;
+                    border: 1px solid var(--border-light);
+                    border-radius: var(--radius-full);
+                    background: var(--bg-cream);
+                    color: var(--text-muted);
+                }
+                .nav-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--text-main); }
+                .nav-search input:focus { outline: none; }
+                .nav-search button { display: grid; place-items: center; width: 34px; height: 34px; flex: 0 0 34px; color: #fff; background: var(--primary); border-radius: 50%; }
+                .mobile-search-trigger { display: none; width: 42px; height: 42px; place-items: center; color: var(--text-main); border: 1px solid var(--border-light); border-radius: 50%; }
         @media (max-width: 1023px) {
           .desktop-nav { display: none !important; }
           .mobile-toggle { display: inline-flex !important; }
+                    .mobile-search-trigger { display: inline-grid; }
         }
         @media (max-width: 480px) {
           .nav-container { padding: 0.6rem 0.75rem !important; }

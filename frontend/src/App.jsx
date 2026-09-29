@@ -1,18 +1,28 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
 import OrderSuccessPage from './pages/OrderSuccessPage';
 import TrackOrderPage from './pages/TrackOrderPage';
-import CustomerLogin from './pages/CustomerLogin';
-import CustomerRegister from './pages/CustomerRegister';
+import CustomerOtpAuth from './pages/CustomerOtpAuth';
+import ProductListingPage from './pages/ProductListingPage';
 import MyOrdersPage from './pages/MyOrdersPage';
 import MyAddressesPage from './pages/MyAddressesPage';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 import { useCart } from './context/CartContext';
 import { CheckCircle2 } from 'lucide-react';
+
+const ScrollToTop = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+};
 
 const ToastNotification = () => {
     const { toastMessage } = useCart();
@@ -46,14 +56,18 @@ const ToastNotification = () => {
 const App = () => {
     return (
         <>
+            <ScrollToTop />
             <Routes>
                 <Route path="/" element={<HomePage />} />
+                <Route path="/products" element={<ProductListingPage mode="products" />} />
+                <Route path="/category/:slug" element={<ProductListingPage mode="category" />} />
+                <Route path="/search" element={<ProductListingPage mode="search" />} />
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="/checkout" element={<CheckoutPage />} />
                 <Route path="/order-success" element={<OrderSuccessPage />} />
                 <Route path="/track-order" element={<TrackOrderPage />} />
-                <Route path="/login" element={<CustomerLogin />} />
-                <Route path="/register" element={<CustomerRegister />} />
+                <Route path="/login" element={<CustomerOtpAuth />} />
+                <Route path="/register" element={<CustomerOtpAuth />} />
                 <Route path="/my-orders" element={<MyOrdersPage />} />
                 <Route path="/my-addresses" element={<MyAddressesPage />} />
                 <Route path="/admin/login" element={<AdminLogin />} />
