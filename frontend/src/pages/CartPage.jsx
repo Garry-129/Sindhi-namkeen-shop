@@ -5,16 +5,63 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useCart } from '../context/CartContext';
 import { buildWhatsAppOrderUrl } from '../utils/whatsapp';
+import { useCustomerAuth } from '../context/CustomerAuthContext';
+import { fetchCustomerProfileApi } from '../services/api';
 
 const CartPage = () => {
+    const [showCustomerDetails, setShowCustomerDetails] = React.useState(false);
+    const [customerName, setCustomerName] = React.useState('');
+    const [customerPhone, setCustomerPhone] = React.useState('');
+    const [customerAddress, setCustomerAddress] = React.useState('');
+    const [customerPincode, setCustomerPincode] = React.useState('');
+    const [customerLandmark, setCustomerLandmark] = React.useState('');
     const { cart, removeFromCart, updateQuantity, clearCart, itemsSubtotal, deliveryCharge, grandTotal, showToast } = useCart();
-    const whatsappUrl = buildWhatsAppOrderUrl(cart, { itemsSubtotal, deliveryCharge, grandTotal });
+    const { customerUser, isCustomerAuthenticated } = useCustomerAuth();
+    const whatsappUrl = buildWhatsAppOrderUrl(
+        cart,
+        { itemsSubtotal, deliveryCharge, grandTotal },
+        {
+            name: customerUser?.name,
+            phone: customerUser?.phone,
+        }
+    );
+    const loadCustomerDetails = async () => {
+        if (!isCustomerAuthenticated) {
+            return;
+        }
 
+        try {
+            const res = await fetchCustomerProfileApi();
+
+            if (res?.success && res.customer) {
+                setCustomerName(res.customer.name || '');
+                setCustomerPhone(res.customer.phone || '');
+
+                const defaultAddress =
+                    (res.customer.addresses || []).find((address) => address.isDefault) ||
+                    (res.customer.addresses || [])[0];
+
+                if (defaultAddress) {
+                    setCustomerAddress(defaultAddress.fullAddress || '');
+                }
+            }
+        } catch (error) {
+            console.error('Failed to load customer details:', error);
+        }
+    };
+    const handleOpenCustomerDetails = async () => {
+        await loadCustomerDetails();
+        setShowCustomerDetails(true);
+    };
     const handleWhatsAppOrder = (e) => {
         if (!whatsappUrl) {
             e.preventDefault();
             showToast('WhatsApp number is not configured. Please try again later.');
+            return;
         }
+
+        e.preventDefault();
+        handleOpenCustomerDetails();
     };
 
     const amountForFreeDelivery = Math.max(0, 500 - itemsSubtotal);
@@ -196,7 +243,145 @@ const CartPage = () => {
                     </div>
                 )}
             </main>
+            {showCustomerDetails && (
+                <div
+                    style={{
+                        position: 'fixed',
+                        inset: 0,
+                        background: 'rgba(0,0,0,0.55)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        padding: '1rem',
+                        zIndex: 1000,
+                    }}
+                >
+                    <div
+                        style={{
+                            background: '#fff',
+                            width: '100%',
+                            maxWidth: '520px',
+                            maxHeight: '90vh',
+                            overflowY: 'auto',
+                            borderRadius: '14px',
+                            padding: '1.5rem',
+                            boxSizing: 'border-box',
+                        }}
+                    >
+                        <h2 style={{ marginTop: 0 }}>Delivery Details</h2>
 
+                        <p style={{ color: '#666', marginBottom: '1.25rem' }}>
+                            Please confirm your details before opening WhatsApp.
+                        </p>
+
+                        <div style={{ display: 'grid', gap: '1rem' }}>
+                            <div>
+                                <label>Full Name *</label>
+                                <input
+                                    type="text"
+                                    value={customerName}
+                                    onChange={(e) => setCustomerName(e.target.value)}
+                                    placeholder="Enter your full name"
+                                    required
+                                    style={{ width: '100%', padding: '0.75rem', boxSizing: 'border-box' }}
+                                />
+                            </div>
+
+                            <div>
+                                <label>Mobile Number *</label>
+                                <input
+                                    type="tel"
+                                    value={customerPhone}
+                                    onChange={(e) => setCustomerPhone(e.target.value)}
+                                    placeholder="Enter mobile number"
+                                    required
+                                    style={{ width: '100%', padding: '0.75rem', boxSizing: 'border-box' }}
+                                />
+                            </div>
+
+                            <div>
+                                <label>Delivery Address *</label>
+                                <textarea
+                                    value={customerAddress}
+                                    onChange={(e) => setCustomerAddress(e.target.value)}
+                                    placeholder="House / Flat No., Street, Area"
+                                    required
+                                    rows={3}
+                                    style={{ width: '100%', padding: '0.75rem', boxSizing: 'border-box' }}
+                                />
+                            </div>
+
+                            <div>
+                                <label>Pincode *</label>
+                                <input
+                                    type="text"
+                                    value={customerPincode}
+                                    onChange={(e) => setCustomerPincode(e.target.value)}
+                                    placeholder="Enter pincode"
+                                    required
+                                    style={{ width: '100%', padding: '0.75rem', boxSizing: 'border-box' }}
+                                />
+                            </div>
+
+                            <div>
+                                <label>Landmark (Optional)</label>
+                                <input
+                                    type="text"
+                                    value={customerLandmark}
+                                    onChange={(e) => setCustomerLandmark(e.target.value)}
+                                    placeholder="Nearby landmark"
+                                    style={{ width: '100%', padding: '0.75rem', boxSizing: 'border-box' }}
+                                />
+                            </div>
+
+                            <div style={{ display: 'flex', gap: '0.75rem' }}>
+                                <button
+                                    type="button"
+                                    onClick={() => setShowCustomerDetails(false)}
+                                    style={{ flex: 1, padding: '0.8rem' }}
+                                >
+                                    Cancel
+                                </button>
+
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        if (!customerName.trim() || !customerPhone.trim() || !customerAddress.trim() || !customerPincode.trim()) {
+                                            showToast('Please fill all required delivery details.');
+                                            return;
+                                        }
+
+                                        const customerDetails = {
+                                            name: customerName.trim(),
+                                            phone: customerPhone.trim(),
+                                            address: customerAddress.trim(),
+                                            pincode: customerPincode.trim(),
+                                            landmark: customerLandmark.trim(),
+                                        };
+
+                                        const finalWhatsAppUrl = buildWhatsAppOrderUrl(
+                                            cart,
+                                            { itemsSubtotal, deliveryCharge, grandTotal },
+                                            customerDetails
+                                        );
+
+                                        if (!finalWhatsAppUrl) {
+                                            showToast('WhatsApp number is not configured. Please try again later.');
+                                            return;
+                                        }
+
+                                        setShowCustomerDetails(false);
+                                        window.open(finalWhatsAppUrl, '_blank', 'noopener,noreferrer');
+                                    }}
+                                    style={{ flex: 1, padding: '0.8rem' }}
+                                >
+                                    Continue to WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
             <Footer />
 
             <style>{`
