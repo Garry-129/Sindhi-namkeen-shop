@@ -1,13 +1,21 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { ShoppingBag, Trash2, Plus, Minus, ArrowRight, ArrowLeft, Truck, AlertCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ShoppingBag, Trash2, Plus, Minus, ArrowLeft, Truck, MessageSquare } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useCart } from '../context/CartContext';
+import { buildWhatsAppOrderUrl } from '../utils/whatsapp';
 
 const CartPage = () => {
-    const { cart, removeFromCart, updateQuantity, clearCart, itemsSubtotal, deliveryCharge, grandTotal } = useCart();
-    const navigate = useNavigate();
+    const { cart, removeFromCart, updateQuantity, clearCart, itemsSubtotal, deliveryCharge, grandTotal, showToast } = useCart();
+    const whatsappUrl = buildWhatsAppOrderUrl(cart, { itemsSubtotal, deliveryCharge, grandTotal });
+
+    const handleWhatsAppOrder = (e) => {
+        if (!whatsappUrl) {
+            e.preventDefault();
+            showToast('WhatsApp number is not configured. Please try again later.');
+        }
+    };
 
     const amountForFreeDelivery = Math.max(0, 500 - itemsSubtotal);
 
@@ -169,17 +177,20 @@ const CartPage = () => {
                                 </div>
                             </div>
 
-                            <button
-                                onClick={() => navigate('/checkout')}
-                                className="btn-primary"
-                                style={{ width: '100%', padding: '0.85rem', fontSize: '1rem' }}
+                            <a
+                                href={whatsappUrl || '#'}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={handleWhatsAppOrder}
+                                className="btn-whatsapp"
+                                style={{ width: '100%', padding: '0.85rem', fontSize: '1rem', textDecoration: 'none', boxSizing: 'border-box' }}
                             >
-                                <span>Proceed to Checkout</span>
-                                <ArrowRight size={18} />
-                            </button>
+                                <MessageSquare size={18} />
+                                <span>Order on WhatsApp</span>
+                            </a>
 
                             <div style={{ marginTop: '1.25rem', padding: '0.75rem', backgroundColor: 'var(--bg-muted)', borderRadius: 'var(--radius-sm)', fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: 1.4 }}>
-                                📍 Direct delivery in <strong>Model Town Park, Rohtak</strong> & nearby areas. Cash on Delivery & WhatsApp order options available!
+                                📍 Direct delivery in <strong>Model Town Park, Rohtak</strong> & nearby areas. WhatsApp will open with your order as a draft — press <strong>Send</strong> in WhatsApp to place it.
                             </div>
                         </div>
                     </div>

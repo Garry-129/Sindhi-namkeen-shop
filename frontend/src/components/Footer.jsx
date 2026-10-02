@@ -3,11 +3,11 @@ import { MapPin, Phone, MessageSquare, Clock, Heart, ShieldCheck } from 'lucide-
 import { Link } from 'react-router-dom';
 import LocationMap from './LocationMap';
 import { categories } from '../data/categories';
+import { buildWhatsAppChatUrl } from '../utils/whatsapp';
 
 const Footer = () => {
     const shopPhone = '+91 9138592984';
-    const whatsappNumber = '+91 9138592984';
-    const whatsappClean = whatsappNumber.replace(/[^0-9]/g, '');
+    const whatsappUrl = buildWhatsAppChatUrl();
 
     return (
         <footer style={{
@@ -49,16 +49,18 @@ const Footer = () => {
                         <p style={{ fontSize: '0.9rem', color: '#b5a59c', lineHeight: 1.6, marginBottom: '1.25rem' }}>
                             Rohtak's premier store for authentic handcrafted namkeen, pure ghee biscuits, and premium quality dry fruits.
                         </p>
-                        <a
-                            href={`https://wa.me/${whatsappClean}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn-whatsapp"
-                            style={{ padding: '0.55rem 1.1rem', fontSize: '0.85rem' }}
-                        >
-                            <MessageSquare size={16} />
-                            <span>Order via WhatsApp</span>
-                        </a>
+                        {whatsappUrl && (
+                            <a
+                                href={whatsappUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn-whatsapp"
+                                style={{ padding: '0.55rem 1.1rem', fontSize: '0.85rem' }}
+                            >
+                                <MessageSquare size={16} />
+                                <span>Order via WhatsApp</span>
+                            </a>
+                        )}
                     </div>
 
                     {/* Column 2: Store Location & Address */}
